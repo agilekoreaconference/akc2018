@@ -1,12 +1,20 @@
 {
   "items": [
     {
-      "title": "ki",
-      "url": "images/speaker/woody.jpeg"
+      "title": "Ahmed Sidky",
+      "url": "images/speaker/Ahmed_Sidky/Ahmed-Sidky-PurpleBGedited.jpg"
     },
     {
-      "title": "woody",
-      "url": "images/speaker/woody.jpeg"
+      "title": "erick lee",
+      "url": "images/speaker/erick_lee.jpg"
+    },
+    {
+      "title": "giewook koo",
+      "url": "images/speaker/giewook_koo.jpg"
+    },
+    {
+      "title": "hyungil cho",
+      "url": "images/speaker/hyungil_cho.jpg"
     }
   ]
 }
