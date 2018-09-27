@@ -1,3 +1,161 @@
-<div align='center'>
-    <img src='images/AKC_logo.png' alt='AKC2018 LOGO'/>
-</div>
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <link rel="canonical" href="https://agilekoreaconference.github.io">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Event",
+    "name": "Agile Korea Conference 2018",
+    "startDate": "2018-11-23T09:00",
+    "endDate": "2018-11-23T19:00",
+    "performer": {
+      "@type": "PerformingGroup",
+      "name": "AgileKoreaConference"
+    },
+    "location": {
+      "@type": "Place",
+      "name": "삼성SDS",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "송파구 올림픽로35길 125",
+        "addressLocality": "서울",
+        "postalCode": "05510",
+        "addressCountry": "KR"
+      }
+    }
+  }
+  </script>
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <script async custom-element="amp-date-countdown" src="https://cdn.ampproject.org/v0/amp-date-countdown-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+
+  <style amp-custom>
+    .headerbar {
+      display: flex;
+      width: auto;
+      padding: 10px;
+    }
+    .site-name {
+      flex-grow: 1;
+    }
+    .hamburger {
+    }
+    .sidebar > li {
+      list-style-type: none;
+      margin-bottom:10px;
+    }
+    .sidebar a {
+      text-decoration: none;
+    }
+    .close-sidebar {
+      font-size: 1.5em;
+      padding-left: 5px;
+    }
+    .countdown {
+      text-align: center;
+    }
+    .register-button {
+      display: flex;
+      justify-content: center;
+    }
+    .register-button > a {
+      background: cadetblue;
+    }
+    .location {
+      display: flex;
+      justify-content: center;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- navigator -->
+  <header class="headerbar">
+    <div class="site-name">Agile Korea'18</div>
+    <div role="button" on="tap:sidebar.toggle" tabindex="0" class="hamburger">☰</div>
+  </header>
+  <amp-sidebar id="sidebar"
+               layout="nodisplay"
+               side="right">
+    <amp-img class="close-sidebar"
+             src="/images/ic_close_black_18dp_2x.png"
+             width="20"
+             height="20"
+             alt="close sidebar"
+             on="tap:sidebar.close"
+             role="button"
+             tabindex="0"></amp-img>
+    <ul>
+      <li><a href="schedule.html">SCHEDULE</a></li>
+      <li><a href="https://onoffmix.com/event/111479" target="_blank">REGISTER</a></li>
+      <li><a href="https://ko-kr.facebook.com/AgileKoreaConference/" target="_blank">애코 Facebook</a></li>
+    </ul>
+  </amp-sidebar>
+
+
+  <amp-img alt='AKC2018 LOGO'
+           width="360"
+           height="150"
+           layout="responsive"
+           src='images/journeyToBeingAgile.png'
+  ></amp-img>
+
+  <!-- D-day -->
+  <amp-date-countdown timestamp-seconds="1542931200"
+                      layout="fixed-height"
+                      height="100">
+    <template type="amp-mustache">
+      <p class="countdown">
+        {{d}} days, {{h}} hours, {{m}} minutes, {{s}} seconds
+      </p>
+    </template>
+  </amp-date-countdown>
+
+  <!-- speaker -->
+  <amp-carousel height="300"
+                layout="fixed-height"
+                type="slides">
+    <amp-list width="auto"
+              height="300"
+              layout="fixed-height"
+              src="/data/speakers.json"
+              class="m1">
+      <template type="amp-mustache">
+        <div>
+          <amp-img alt='Woody'
+                   width="200"
+                   height="150"
+                   layout="responsive"
+                   src='{{url}}'
+          ></amp-img>
+          {{title}}
+        </div>
+      </template>
+    </amp-list>
+  </amp-carousel>
+
+  <div class="register-button">
+    <a href="https://onoffmix.com/event/111479" target="_blank">참가신청</a>
+  </div>
+
+  <div class="location">
+    <amp-iframe width="300"
+                height="300"
+                title="Google map pin on Googleplex, Mountain View CA"
+                layout="fixed"
+                sandbox="allow-scripts allow-same-origin allow-popups"
+                frameborder="0"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1471.2751535408!2d127.09930580408073!3d37.515070620551235!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xec64862abfc4d706!2z7IK87ISxU0RT!5e0!3m2!1sko!2skr!4v1538035006984">
+    </amp-iframe>
+  </div>
+</body>
+</html>
