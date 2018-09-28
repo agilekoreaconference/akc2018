@@ -1,20 +1,24 @@
 {
   "items": [
     {
-      "title": "Ahmed Sidky",
-      "url": "images/speaker/Ahmed_Sidky/Ahmed-Sidky-PurpleBGedited.jpg"
+      "name": "Ahmed Sidky",
+      "url": "images/speaker/Ahmed_Sidky/Ahmed-Sidky-PurpleBGedited.jpg",
+      "detail": "Ahmed Sidky"
     },
     {
-      "title": "erick lee",
-      "url": "images/speaker/erick_lee.jpg"
+      "name": "erick lee",
+      "url": "images/speaker/erick_lee.jpg",
+      "detail": "erick lee"
     },
     {
-      "title": "giewook koo",
-      "url": "images/speaker/giewook_koo.jpg"
+      "name": "giewook koo",
+      "url": "images/speaker/giewook_koo.jpg",
+      "detail": "erick lee"
     },
     {
-      "title": "hyungil cho",
-      "url": "images/speaker/hyungil_cho.jpg"
+      "name": "hyungil cho",
+      "url": "images/speaker/hyungil_cho.jpg",
+      "detail": "erick lee"
     }
   ]
 }
