@@ -3,22 +3,34 @@
     {
       "name": "Ahmed Sidky",
       "url": "images/speaker/Ahmed_Sidky/Ahmed-Sidky-PurpleBGedited.jpg",
-      "detail": "Ahmed Sidky"
+      "track": "마젤란홀",
+      "time": "09:00~10:00",
+      "title": "Ahmed Sidky title",
+      "note": "Ahmed Sidky note"
     },
     {
       "name": "erick lee",
       "url": "images/speaker/erick_lee.jpg",
-      "detail": "erick lee"
+      "track": "마젤란홀",
+      "time": "09:00~10:00",
+      "title": "erick lee title",
+      "note": "erick lee note"
     },
     {
       "name": "giewook koo",
       "url": "images/speaker/giewook_koo.jpg",
-      "detail": "erick lee"
+      "track": "마젤란홀",
+      "time": "09:00~10:00",
+      "title": "giewook koo title",
+      "note": "giewook koo note"
     },
     {
       "name": "hyungil cho",
       "url": "images/speaker/hyungil_cho.jpg",
-      "detail": "erick lee"
+      "track": "마젤란홀",
+      "time": "09:00~10:00",
+      "title": "hyungil cho title",
+      "note": "hyungil cho note"
     }
   ]
 }

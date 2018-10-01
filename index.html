@@ -33,28 +33,16 @@
   <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
   <script async custom-element="amp-date-countdown" src="https://cdn.ampproject.org/v0/amp-date-countdown-0.1.js"></script>
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
-  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
   <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
   <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
-  <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
   <script async custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js"></script>
   <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
+  <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
 
   <style amp-custom>
-    footer {
-      display: flex;
-      flex-direction: column;
-      background: #666666;
-      width: 100%;
-      height: 40px;
-      padding: 5px;
-      justify-content: center;
-      align-items: center;
-      font-size: 10px;
-      color: white;
-    }
-    .headerbar {
+    header {
       display: flex;
       width: auto;
       padding: 10px;
@@ -64,17 +52,51 @@
       right: 0;
       height: 20px;
       z-index: 10;
-      background: white;
+      background: dodgerblue;
+      color: white;
+    }
+    footer {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 40px;
+      padding: 5px;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px;
+      color: white;
+      background: dodgerblue;
+    }
+    a {
+      text-decoration: none;
+    }
+    a:visited {
+      text-decoration: none;
+    }
+    .divider {
+      border: 1px white solid;
+      margin: 10px 0px;
     }
     .site-name {
       flex-grow: 1;
     }
-    .sidebar > li {
-      list-style-type: none;
-      margin-bottom:10px;
+    #sidebar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      color: white;
+      width: 200px;
+      text-align: center;
+      padding-top: 40px;
     }
-    .sidebar a {
-      text-decoration: none;
+    #sidebar > ul {
+      list-style-type: none;
+      padding: 0px;
+      margin-bottom: 20px;
+    }
+    #sidebar > ul > li {
+      padding: 10px 0px;
     }
     .close-sidebar {
       font-size: 1.5em;
@@ -103,11 +125,23 @@
       width: 0px;
       height: 0px;
     }
-    .sloganArea {
+    .slogan-container {
       margin-top: 40px;
     }
-    .countdown {
+    .countdown-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      padding: 10px 0px;
+      background: #444444;
+    }
+    .countdown-item {
+      border-radius: 10px;
       text-align: center;
+      color: yellow;
+      margin: 2px;
+      padding: 8px;
+      background: rgba(0,0,0,.6);
     }
     .register-button {
       display: flex;
@@ -145,8 +179,9 @@
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
+      padding: 30px;
     }
-    .location-map {
+    .location-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -154,26 +189,50 @@
       margin-top: 20px;
       background: #f2f2f5;
     }
+    .location-detail {
+      margin: 10px 30px;
+    }
+    .location-map {
+      text-align: center;
+    }
+    .photo-2017 {
+      padding-top: 10px;
+      color: white;
+      text-align: center;
+      background: black;
+    }
   </style>
 </head>
 <body>
+  <amp-state id="selectedSpeaker">
+    <script type="application/json">
+      {
+        "name": "nobody",
+        "url": "images/empty_profile.png",
+        "track": "track",
+        "time": "00:00~00:00",
+        "title": "title",
+        "note": "note"
+      }
+    </script>
+  </amp-state>
+
   <!-- navigator -->
-  <header class="headerbar">
+  <header>
     <div class="site-name">Agile Korea'18</div>
     <div role="button" on="tap:sidebar.toggle" tabindex="0" class="hamburger">☰</div>
   </header>
 
+  <!-- side bar -->
   <amp-sidebar id="sidebar"
                layout="nodisplay"
+
                side="right">
-    <amp-img class="close-sidebar"
-             src="/images/ic_close_black_18dp_2x.png"
-             width="20"
-             height="20"
-             alt="close sidebar"
-             on="tap:sidebar.close"
-             role="button"
-             tabindex="0"></amp-img>
+    <amp-img src="images/AKC_logo.png"
+             width="100px"
+             height="100px">
+    </amp-img>
+    <div class="divider"></div>
     <ul>
       <li><a href="schedule.html">SCHEDULE</a></li>
       <li><a href="https://onoffmix.com/event/111479" target="_blank">REGISTER</a></li>
@@ -182,9 +241,10 @@
     </ul>
   </amp-sidebar>
 
+  <!-- scroll to here -->
   <div id="top-page"></div>
 
-  <div class="sloganArea">
+  <div class="slogan-container">
     <amp-img alt='AKC2018 LOGO'
              width="360"
              height="150"
@@ -198,9 +258,12 @@
                       layout="fixed-height"
                       height="100">
     <template type="amp-mustache">
-      <p class="countdown">
-        {{d}} days, {{h}} hours, {{m}} minutes, {{s}} seconds
-      </p>
+      <div class="countdown-container">
+        <div class="countdown-item">{{d}}<br> days</div>
+        <div class="countdown-item">{{h}}<br> hours</div>
+        <div class="countdown-item">{{m}}<br> minutes</div>
+        <div class="countdown-item">{{s}}<br> seconds</div>
+      </div>
     </template>
   </amp-date-countdown>
 
@@ -218,7 +281,17 @@
                    alt="{{name}}"
                    tabindex="0"
                    role="button"
-                   on="tap:AMP.setState({name: '{{name}}', url: '{{url}}', detail: '{{detail}}'}),my-lightbox"
+                   on="tap:AMP.setState(
+                    {
+                      selectedSpeaker:{
+                        name:'{{name}}',
+                        url:'{{url}}',
+                        track:'{{track}}',
+                        time:'{{time}}',
+                        title:'{{title}}',
+                        note:'{{note}}'
+                      }
+                    }),my-lightbox"
                    src="{{url}}"></amp-img>
           <p>{{name}}</p>
         </div>
@@ -235,9 +308,12 @@
                height="250"
                [alt]="name"
                src="images/empty_profile.png"
-               [src]="url"></amp-img>
-      <p [text]="name"></p>
-      <p [text]="detail"></p>
+               [src]="selectedSpeaker.url"></amp-img>
+      <p [text]="selectedSpeaker.name">nobody</p>
+      <p [text]="selectedSpeaker.track">track</p>
+      <p [text]="selectedSpeaker.time">00:00~00:00</p>
+      <p [text]="selectedSpeaker.title">title</p>
+      <p [text]="selectedSpeaker.note">note</p>
     </div>
   </amp-lightbox>
 
@@ -245,14 +321,14 @@
     <a href="schedule.html" target="_blank">상세 스케쥴</a>
   </div>
 
-  <div class="location-map">
+  <div class="location-container">
     <h2>LOCATION</h2>
     <h4>삼성SDS타워 서관</h4>
-    <p style="margin-left: 30px; margin-right: 30px;">
+    <p class="location-detail">
       서울 송파구 신천동 삼성SDS타워 서관 지하 1층 마젤란홀, 파스칼홀, 다목적홀
     </p>
     <!-- generated by naver map -->
-    <table cellpadding="0" cellspacing="0" width="100%"> <tr> <td style="border:1px solid #cecece;"><a href="https://map.naver.com/?query=&searchCoord=&tab=1&lng=f8dd8ad17f50b5419c659a215939ae9a&mapMode=0&mpx=75660f81aaa286be82f58b2c6df7229b271de543712bcd151b57d9f147b75dc045a923f86196d4709ac8942f6a4fcbcb&pinId=12112232&lat=549129cf9af86c5494b92f64cdf54a26&dlevel=11&enc=b64&__pinOnly=false&menu=location&__fromRestorer=true&pinType=site" target="_blank"><amp-img src="http://prt.map.naver.com/mashupmap/print?key=p1538096236242_-1533557123" width="460" height="340" alt="지도 크게 보기" title="지도 크게 보기"/></a></td> </tr> <tr> <td> <table cellpadding="0" cellspacing="0" width="100%"> <tr> <td height="30" bgcolor="#f9f9f9" align="left" style="padding-left:9px; border-left:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="font-family: tahoma; font-size: 11px; color:#666;">2018.9.28</span>&nbsp;<span style="font-size: 11px; color:#e5e5e5;">|</span>&nbsp;<a style="font-family: dotum,sans-serif; font-size: 11px; color:#666; text-decoration: none; letter-spacing: -1px;" href="https://map.naver.com/?query=&searchCoord=&tab=1&lng=f8dd8ad17f50b5419c659a215939ae9a&mapMode=0&mpx=75660f81aaa286be82f58b2c6df7229b271de543712bcd151b57d9f147b75dc045a923f86196d4709ac8942f6a4fcbcb&pinId=12112232&lat=549129cf9af86c5494b92f64cdf54a26&dlevel=11&enc=b64&__pinOnly=false&menu=location&__fromRestorer=true&pinType=site" target="_blank">지도 크게 보기</a> </td> <td width="98" bgcolor="#f9f9f9" align="right" style="text-align:right; padding-right:9px; border-right:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="float:right;"><span style="font-size:9px; font-family:Verdana, sans-serif; color:#444;">&copy;&nbsp;</span>&nbsp;<a style="font-family:tahoma; font-size:9px; font-weight:bold; color:#2db400; text-decoration:none;" href="http://www.nhncorp.com" target="_blank">NAVER Corp.</a></span> </td> </tr> </table> </td> </tr> </table>
+    <table class="location-map" cellpadding="0" cellspacing="0" width="100%"> <tr> <td style="border:1px solid #cecece;"><a href="https://map.naver.com/?query=&searchCoord=&tab=1&lng=f8dd8ad17f50b5419c659a215939ae9a&mapMode=0&mpx=75660f81aaa286be82f58b2c6df7229b271de543712bcd151b57d9f147b75dc045a923f86196d4709ac8942f6a4fcbcb&pinId=12112232&lat=549129cf9af86c5494b92f64cdf54a26&dlevel=11&enc=b64&__pinOnly=false&menu=location&__fromRestorer=true&pinType=site" target="_blank"><amp-img src="http://prt.map.naver.com/mashupmap/print?key=p1538096236242_-1533557123" width="460" height="340" alt="지도 크게 보기" title="지도 크게 보기"/></a></td> </tr> <tr> <td> <table cellpadding="0" cellspacing="0" width="100%"> <tr> <td height="30" bgcolor="#f9f9f9" align="left" style="padding-left:9px; border-left:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="font-family: tahoma; font-size: 11px; color:#666;">2018.9.28</span>&nbsp;<span style="font-size: 11px; color:#e5e5e5;">|</span>&nbsp;<a style="font-family: dotum,sans-serif; font-size: 11px; color:#666; text-decoration: none; letter-spacing: -1px;" href="https://map.naver.com/?query=&searchCoord=&tab=1&lng=f8dd8ad17f50b5419c659a215939ae9a&mapMode=0&mpx=75660f81aaa286be82f58b2c6df7229b271de543712bcd151b57d9f147b75dc045a923f86196d4709ac8942f6a4fcbcb&pinId=12112232&lat=549129cf9af86c5494b92f64cdf54a26&dlevel=11&enc=b64&__pinOnly=false&menu=location&__fromRestorer=true&pinType=site" target="_blank">지도 크게 보기</a> </td> <td width="98" bgcolor="#f9f9f9" align="right" style="text-align:right; padding-right:9px; border-right:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="float:right;"><span style="font-size:9px; font-family:Verdana, sans-serif; color:#444;">&copy;&nbsp;</span>&nbsp;<a style="font-family:tahoma; font-size:9px; font-weight:bold; color:#2db400; text-decoration:none;" href="http://www.nhncorp.com" target="_blank">NAVER Corp.</a></span> </td> </tr> </table> </td> </tr> </table>
   </div>
 
   <!-- scroll up -->
@@ -300,6 +376,32 @@
       }
     </script>
   </amp-animation>
+
+  <div class="photo-2017">
+    <h2>PHOTO 2017</h2>
+    <amp-carousel height="300"
+                  layout="fixed-height"
+                  type="slides"
+                  autoplay
+                  delay="2000">
+      <amp-img width="360"
+               height="300"
+               src="images/2017/allmembers.jpg"
+               alt="an image"></amp-img>
+      <amp-img width="360"
+               height="300"
+               src="images/2017/keywords.png"
+               alt="an image"></amp-img>
+      <amp-img width="360"
+               height="300"
+               src="images/2017/IMG_2752.jpg"
+               alt="an image"></amp-img>
+      <amp-img width="360"
+               height="300"
+               src="images/2017/IMG_2935.jpg"
+               alt="an image"></amp-img>
+    </amp-carousel>
+  </div>
 
   <footer>
     <div>
