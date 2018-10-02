@@ -40,6 +40,7 @@
   <script async custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js"></script>
   <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
   <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
 
   <style amp-custom>
     header {
@@ -60,6 +61,10 @@
     }
     a:visited {
       text-decoration: none;
+    }
+    .button__close {
+      font-size: 20px;
+      padding: 10px;
     }
     .header__logo {
       margin: 14px 0px 9px 16px;
@@ -114,15 +119,15 @@
       color: #fafafa;
       font-size: 1.4em;
       box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
-      width: 40px;
-      height: 40px;
+      width: 48px;
+      height: 48px;
       border-radius: 100px;
       border: none;
       outline: none;
       background: #E91E63;
       z-index: 9999;
-      bottom: 30px;
-      right: 10px;
+      bottom: 78px;
+      right: 16px;
       position: fixed;
       opacity: 0;
       visibility: hidden;
@@ -133,7 +138,7 @@
       width: 0px;
       height: 0px;
     }
-    .slogan__container {
+    .slogan__section {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -143,38 +148,38 @@
       background: linear-gradient(149deg, #c2f52a, #2af598 41%, #008cfd);
       margin-top: -58px;
     }
-    .slogan__container__title {
+    .slogan__section__title {
       font-family: AvenirNext;
       font-size: 48px;
       font-weight: bold;
       text-align: center;
       color: #171b20;
     }
-    .slogan__container__divider {
+    .slogan__section__divider {
       width: 20px;
       height: 2px;
       background-color: #ffffff;
       margin: 24px 0px;
     }
-    .slogan__container__date {
+    .slogan__section__date {
       font-family: NotoSansKR;
       font-size: 18px;
       font-weight: 900;
       color: #ffffff;
     }
-    .slogan__container__location {
+    .slogan__section__location {
       font-family: NotoSansKR;
       font-size: 16px;
       color: #ffffff;
       margin-top: 5px;
     }
-    .slogan__container__triangle {
+    .slogan__section__triangle {
       border-bottom: 100px solid white;
       border-left: 100vw solid transparent;
       position: absolute;
       top: 370px;
     }
-    .dday__container {
+    .dday__section {
       display: flex;
       flex-direction: row;
       width: 100%;
@@ -184,7 +189,7 @@
       bottom: 0px;
       z-index: 99;
     }
-    .dday__container__item {
+    .dday__section__item {
       flex-grow: 1;
       font-family: NotoSansKR;
       font-size: 18px;
@@ -192,7 +197,7 @@
       line-height: 62px;
       text-align: center;
     }
-    .dday__container__register {
+    .dday__section__register {
       width: 128px;
       height: 100%;
       background-color: #272b2e;
@@ -203,12 +208,11 @@
       line-height: 62px;
       text-align: center;
     }
-    .schedule__container {
+    .link__section {
       display: flex;
       justify-content: center;
-      margin-top: 30px;
     }
-    .schedule__container > a {
+    .link__section > a {
       width: 240px;
       height: 22px;
       padding: 20px 0px;
@@ -224,55 +228,118 @@
       flex-direction: row;
       overflow: scroll;
     }
-    .speaker__list {
+    .session__list {
       text-align: center;
       padding: 0px 9px;
+      margin-bottom: 30px;
     }
-    .speaker__list__card {
+    .session__list__card {
       position: relative;
       height: 327px;
       margin: 0px 10px;
     }
-    .speaker__list__card__note {
+    .session__list__card__note {
       position: absolute;
       bottom: 0;
       z-index: 1;
-      width: calc(100% - 2px);
-      height: 167px;
+      width: calc(100% - 42px);
+      height: calc(167px - 36px);
       background: white;
       box-shadow: 0 2px 12px 0 rgba(68, 79, 87, 0.1);
       border: solid 1px #dee2e6;
+      text-align: left;
+      padding: 18px 20px;
     }
-    .speaker-detail {
-      background: rgba(255,255,255,.8);
-      width: 100%;
-      height: 100%;
-      position: absolute;
+    .session__list__card__note > p {
+      font-family: NotoSansKR;
+      font-size: 14px;
+      font-weight: bold;
+      color: #00a9c8;
+      margin: 0;
+    }
+    .session__list__card__note__subject {
+      font-family: NotoSansKR;
+      font-size: 20px;
+      line-height: 1.5;
+      color: #232b31;
+      width: 240px;
+      height: 60px;
+      margin-top: 4px;
+      margin-bottom: 10px;
+    }
+    .session__list__card__note__speaker {
+      opacity: 0.5;
+      font-family: NotoSansKR;
+      font-size: 16px;
+      color: #232b31;
+      width: 240px;
+      height: 24px;
+    }
+    .speaker__ligthbox {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
+      width: calc(100vw - 60px);
+      height: calc(100vh - 60px);
       padding: 30px;
+      background: rgba(255,255,255,.95);
     }
-    .location-container {
+    .location__section {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       margin-top: 20px;
-      background: #f2f2f5;
     }
-    .location-detail {
+    .location__section__address {
       margin: 10px 30px;
+      text-align: center;
+      font-family: NotoSansKR;
+      font-size: 16px;
+      line-height: 1.5;
+      color: #232b31;
     }
-    .location-map {
+    .location__section__map {
       text-align: center;
     }
-    .photo-2017 {
-      padding-top: 10px;
-      color: white;
+    .sponsor__section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 280px;
+    }
+    .faq__section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 282px;
+      background-color: #f1f4f6;
+    }
+    .faq__section > amp-fit-text {
+      font-family: NotoSansKR;
+      font-size: 16px;
+      line-height: 1.5;
       text-align: center;
-      background: black;
+      color: #232b31;
+      margin: 8px 0px 20px 0px;
+    }
+    .photo2017__section {
+      background: white;
+      font-family: NotoSansKR;
+      font-size: 18px;
+      line-height: 1.33;
+      text-align: center;
+      color: #444f57;
+      padding: 38px 15px 62px 15px;
+    }
+    .photo2017__section__title {
+      font-weight: bold;
+    }
+    .photo2017__section__subtitle {
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -333,19 +400,19 @@
   <!-- scroll to here -->
   <div id="top-page"></div>
 
-  <div class="slogan__container">
-    <div class="slogan__container__title">
+  <div class="slogan__section">
+    <div class="slogan__section__title">
       Journey to<br> Being Agile
     </div>
-    <div class="slogan__container__divider"></div>
-    <div class="slogan__container__date">2018.11.23</div>
-    <div class="slogan__container__location">삼성SDS 서관</div>
-    <div class="slogan__container__triangle"></div>
+    <div class="slogan__section__divider"></div>
+    <div class="slogan__section__date">2018.11.23</div>
+    <div class="slogan__section__location">삼성SDS 서관</div>
+    <div class="slogan__section__triangle"></div>
   </div>
 
   <!-- D-day -->
-  <div class="dday__container">
-    <amp-date-countdown class="dday__container__item"
+  <div class="dday__section">
+    <amp-date-countdown class="dday__section__item"
                         timestamp-seconds="1542931200"
                         layout="fixed-height"
                         height="62">
@@ -353,20 +420,17 @@
           사전 접수 D-{{d}}
       </template>
     </amp-date-countdown>
-    <div class="dday__container__register">등록하기</div>
+    <div class="dday__section__register">등록하기</div>
   </div>
   <!-- speaker -->
-  <div class="speaker__list">
+  <div class="session__list">
     <h2>Session</h2>
     <amp-list width="auto"
               height="327"
               layout="fixed-height"
               src="data/speakers.json">
       <template type="amp-mustache">
-        <div class="speaker__list__card">
-          <div class="speaker__list__card__note">
-            <p>{{name}}</p>
-          </div>
+        <div class="session__list__card">
           <amp-img width="280"
                    height="327"
                    alt="{{name}}"
@@ -384,16 +448,30 @@
                       }
                     }),my-lightbox"
                    src="{{url}}"></amp-img>
+          <div class="session__list__card__note">
+            <p>SUBJECT</p>
+            <amp-fit-text class="session__list__card__note__subject"
+                          width="240"
+                          height="60"
+                          max-font-size="20"
+                          layout="responsive">{{title}}</amp-fit-text>
+            <amp-fit-text class="session__list__card__note__speaker"
+                          width="240"
+                          height="24"
+                          max-font-size="16"
+                          layout="responsive">{{name}} / {{company}}</amp-fit-text>
+          </div>
         </div>
       </template>
     </amp-list>
   </div>
   <amp-lightbox id="my-lightbox"
                 layout="nodisplay">
-    <div class="speaker-detail"
-         on="tap:my-lightbox.close"
-         role="button"
-         tabindex="0">
+    <div class="speaker__ligthbox">
+      <div class="button__close"
+            on="tap:my-lightbox.close"
+            role="button"
+            tabindex="0">X</div>
       <amp-img width="200"
                height="250"
                [alt]="name"
@@ -407,18 +485,62 @@
     </div>
   </amp-lightbox>
 
-  <div class="schedule__container">
+  <div class="link__section">
     <a href="schedule.html" target="_blank">스케줄 보기</a>
   </div>
 
-  <div class="location-container">
+  <div class="location__section">
     <h2>Location</h2>
-    <h4>삼성SDS타워 서관</h4>
-    <p class="location-detail">
-      서울 송파구 신천동 삼성SDS타워 서관 지하 1층 마젤란홀, 파스칼홀, 다목적홀
+    <p class="location__section__address">
+      서울특별시 송파구 신천동 올림픽로 123<br>
+      West Campus 1F
     </p>
     <!-- generated by naver map -->
-    <table class="location-map" cellpadding="0" cellspacing="0" width="100%"> <tr> <td style="border:1px solid #cecece;"><a href="https://map.naver.com/?query=&searchCoord=&tab=1&lng=f8dd8ad17f50b5419c659a215939ae9a&mapMode=0&mpx=75660f81aaa286be82f58b2c6df7229b271de543712bcd151b57d9f147b75dc045a923f86196d4709ac8942f6a4fcbcb&pinId=12112232&lat=549129cf9af86c5494b92f64cdf54a26&dlevel=11&enc=b64&__pinOnly=false&menu=location&__fromRestorer=true&pinType=site" target="_blank"><amp-img src="http://prt.map.naver.com/mashupmap/print?key=p1538096236242_-1533557123" width="460" height="340" alt="지도 크게 보기" title="지도 크게 보기"/></a></td> </tr> <tr> <td> <table cellpadding="0" cellspacing="0" width="100%"> <tr> <td height="30" bgcolor="#f9f9f9" align="left" style="padding-left:9px; border-left:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="font-family: tahoma; font-size: 11px; color:#666;">2018.9.28</span>&nbsp;<span style="font-size: 11px; color:#e5e5e5;">|</span>&nbsp;<a style="font-family: dotum,sans-serif; font-size: 11px; color:#666; text-decoration: none; letter-spacing: -1px;" href="https://map.naver.com/?query=&searchCoord=&tab=1&lng=f8dd8ad17f50b5419c659a215939ae9a&mapMode=0&mpx=75660f81aaa286be82f58b2c6df7229b271de543712bcd151b57d9f147b75dc045a923f86196d4709ac8942f6a4fcbcb&pinId=12112232&lat=549129cf9af86c5494b92f64cdf54a26&dlevel=11&enc=b64&__pinOnly=false&menu=location&__fromRestorer=true&pinType=site" target="_blank">지도 크게 보기</a> </td> <td width="98" bgcolor="#f9f9f9" align="right" style="text-align:right; padding-right:9px; border-right:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="float:right;"><span style="font-size:9px; font-family:Verdana, sans-serif; color:#444;">&copy;&nbsp;</span>&nbsp;<a style="font-family:tahoma; font-size:9px; font-weight:bold; color:#2db400; text-decoration:none;" href="http://www.nhncorp.com" target="_blank">NAVER Corp.</a></span> </td> </tr> </table> </td> </tr> </table>
+    <table class="location__section__map" cellpadding="0" cellspacing="0" width="100%"> <tr> <td style="border:1px solid #cecece;"><a href="https://map.naver.com/?query=&searchCoord=&tab=1&lng=f8dd8ad17f50b5419c659a215939ae9a&mapMode=0&mpx=75660f81aaa286be82f58b2c6df7229b271de543712bcd151b57d9f147b75dc045a923f86196d4709ac8942f6a4fcbcb&pinId=12112232&lat=549129cf9af86c5494b92f64cdf54a26&dlevel=11&enc=b64&__pinOnly=false&menu=location&__fromRestorer=true&pinType=site" target="_blank"><amp-img src="http://prt.map.naver.com/mashupmap/print?key=p1538096236242_-1533557123" width="460" height="340" layout="responsive" alt="지도 크게 보기" title="지도 크게 보기"/></a></td> </tr> <tr> <td> <table cellpadding="0" cellspacing="0" width="100%"> <tr> <td height="30" bgcolor="#f9f9f9" align="left" style="padding-left:9px; border-left:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="font-family: tahoma; font-size: 11px; color:#666;">2018.9.28</span>&nbsp;<span style="font-size: 11px; color:#e5e5e5;">|</span>&nbsp;<a style="font-family: dotum,sans-serif; font-size: 11px; color:#666; text-decoration: none; letter-spacing: -1px;" href="https://map.naver.com/?query=&searchCoord=&tab=1&lng=f8dd8ad17f50b5419c659a215939ae9a&mapMode=0&mpx=75660f81aaa286be82f58b2c6df7229b271de543712bcd151b57d9f147b75dc045a923f86196d4709ac8942f6a4fcbcb&pinId=12112232&lat=549129cf9af86c5494b92f64cdf54a26&dlevel=11&enc=b64&__pinOnly=false&menu=location&__fromRestorer=true&pinType=site" target="_blank">지도 크게 보기</a> </td> <td width="98" bgcolor="#f9f9f9" align="right" style="text-align:right; padding-right:9px; border-right:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="float:right;"><span style="font-size:9px; font-family:Verdana, sans-serif; color:#444;">&copy;&nbsp;</span>&nbsp;<a style="font-family:tahoma; font-size:9px; font-weight:bold; color:#2db400; text-decoration:none;" href="http://www.nhncorp.com" target="_blank">NAVER Corp.</a></span> </td> </tr> </table> </td> </tr> </table>
+  </div>
+
+  <div class="sponsor__section">
+    <h2>Sponsor</h2>
+    <pre>삼성SDS | Agile Coach | Aba | KI | Woody</pre>
+  </div>
+
+  <div class="faq__section">
+    <h2>FAQ</h2>
+    <amp-fit-text width="220"
+                  height="48"
+                  max-font-size="16">
+      Agile Korea Conference 2018에 더 궁금한 점이 있다면?
+    </amp-fit-text>
+    <div class="link__section">
+      <a href="faq.html" target="_blank">FAQ 바로가기</a>
+    </div>
+  </div>
+
+  <div class="photo2017__section">
+    <div class="photo2017__section__title">2017<br>Agile Korea Conference</div>
+    <div class="photo2017__section__subtitle">작년 행사 보기</div>
+    <amp-carousel height="300"
+                  layout="fixed-height"
+                  type="slides"
+                  autoplay
+                  delay="2000">
+      <amp-img width="360"
+               height="300"
+               src="images/2017/allmembers.jpg"
+               alt="an image"></amp-img>
+      <amp-img width="360"
+               height="300"
+               src="images/2017/keywords.png"
+               alt="an image"></amp-img>
+      <amp-img width="360"
+               height="300"
+               src="images/2017/IMG_2752.jpg"
+               alt="an image"></amp-img>
+      <amp-img width="360"
+               height="300"
+               src="images/2017/IMG_2935.jpg"
+               alt="an image"></amp-img>
+    </amp-carousel>
   </div>
 
   <!-- scroll up -->
@@ -466,31 +588,5 @@
       }
     </script>
   </amp-animation>
-
-  <div class="photo-2017">
-    <h2>PHOTO 2017</h2>
-    <amp-carousel height="300"
-                  layout="fixed-height"
-                  type="slides"
-                  autoplay
-                  delay="2000">
-      <amp-img width="360"
-               height="300"
-               src="images/2017/allmembers.jpg"
-               alt="an image"></amp-img>
-      <amp-img width="360"
-               height="300"
-               src="images/2017/keywords.png"
-               alt="an image"></amp-img>
-      <amp-img width="360"
-               height="300"
-               src="images/2017/IMG_2752.jpg"
-               alt="an image"></amp-img>
-      <amp-img width="360"
-               height="300"
-               src="images/2017/IMG_2935.jpg"
-               alt="an image"></amp-img>
-    </amp-carousel>
-  </div>
 </body>
 </html>
