@@ -49,18 +49,6 @@
       height: 58px;
       background: transparent;
     }
-    footer {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 40px;
-      padding: 5px;
-      justify-content: center;
-      align-items: center;
-      font-size: 10px;
-      color: white;
-      background: dodgerblue;
-    }
     h2 {
       font-family: NotoSansKR;
       font-size: 24px;
@@ -181,10 +169,10 @@
       margin-top: 5px;
     }
     .slogan__container__triangle {
-      width: 0;
-      height: 0;
       border-bottom: 100px solid white;
-      border-left: 100px solid transparent;
+      border-left: 100vw solid transparent;
+      position: absolute;
+      top: 370px;
     }
     .dday__container {
       display: flex;
@@ -236,14 +224,24 @@
       flex-direction: row;
       overflow: scroll;
     }
-    .speaker-list {
-      margin-left: 10px;
-      margin-right: 20px;
+    .speaker__list {
       text-align: center;
+      padding: 0px 9px;
     }
-    .speaker{
-      margin-left: 10px;
-      text-align: center;
+    .speaker__list__card {
+      position: relative;
+      height: 327px;
+      margin: 0px 10px;
+    }
+    .speaker__list__card__note {
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+      width: calc(100% - 2px);
+      height: 167px;
+      background: white;
+      box-shadow: 0 2px 12px 0 rgba(68, 79, 87, 0.1);
+      border: solid 1px #dee2e6;
     }
     .speaker-detail {
       background: rgba(255,255,255,.8);
@@ -358,16 +356,19 @@
     <div class="dday__container__register">등록하기</div>
   </div>
   <!-- speaker -->
-  <div class="speaker-list">
+  <div class="speaker__list">
     <h2>Session</h2>
     <amp-list width="auto"
-              height="300"
+              height="327"
               layout="fixed-height"
               src="data/speakers.json">
       <template type="amp-mustache">
-        <div class="speaker">
-          <amp-img width="250"
-                   height="250"
+        <div class="speaker__list__card">
+          <div class="speaker__list__card__note">
+            <p>{{name}}</p>
+          </div>
+          <amp-img width="280"
+                   height="327"
                    alt="{{name}}"
                    tabindex="0"
                    role="button"
@@ -383,7 +384,6 @@
                       }
                     }),my-lightbox"
                    src="{{url}}"></amp-img>
-          <p>{{name}}</p>
         </div>
       </template>
     </amp-list>
@@ -492,11 +492,5 @@
                alt="an image"></amp-img>
     </amp-carousel>
   </div>
-
-  <footer>
-    <div>
-    </div>
-    <span>Agile Korea Conference 2018</span>
-  </footer>
 </body>
 </html>
