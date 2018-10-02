@@ -43,17 +43,11 @@
 
   <style amp-custom>
     header {
-      display: flex;
+      display: grid;
+      grid-template-columns: 55px 1fr 58px;
       width: auto;
-      padding: 10px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 20px;
-      z-index: 10;
-      background: dodgerblue;
-      color: white;
+      height: 58px;
+      background: transparent;
     }
     footer {
       display: flex;
@@ -67,28 +61,41 @@
       color: white;
       background: dodgerblue;
     }
+    h2 {
+      font-family: NotoSansKR;
+      font-size: 24px;
+      font-weight: 900;
+      color: #232b31;
+    }
     a {
       text-decoration: none;
     }
     a:visited {
       text-decoration: none;
     }
-    .divider {
-      border: 1px white solid;
-      margin: 10px 0px;
+    .header__logo {
+      margin: 14px 0px 9px 16px;
     }
-    .site-name {
-      flex-grow: 1;
+    .header__hamburger {
+      display: flex;
+      width: 58px;
+      height: 58px;
+      background-color: #ffffff;
+      justify-content: center;
+      align-items: center;
     }
     #sidebar {
       display: flex;
       flex-direction: column;
       align-items: center;
-      background: rgba(255, 255, 255, 0.9);
-      color: white;
-      width: 200px;
+      background: white;
+      width: 100%;
+      height: 278px;
+      max-width: 100%;
       text-align: center;
-      padding-top: 40px;
+      font-size: 20px;
+      font-family: NotoSansKR;
+      color: #232b31;
     }
     #sidebar > ul {
       list-style-type: none;
@@ -98,9 +105,22 @@
     #sidebar > ul > li {
       padding: 10px 0px;
     }
-    .close-sidebar {
-      font-size: 1.5em;
-      padding-left: 5px;
+    .sidebar__header {
+      display: grid;
+      grid-template-columns: 55px 1fr 58px;
+      width: 100%;
+      height: 58px;
+    }
+    .sidebar__header__logo {
+      margin: 14px 0px 9px 16px;
+    }
+    .sidebar__header__close {
+      display: flex;
+      width: 58px;
+      height: 58px;
+      background-color: #ffffff;
+      justify-content: center;
+      align-items: center;
     }
     .scrollToTop {
       color: #fafafa;
@@ -125,36 +145,91 @@
       width: 0px;
       height: 0px;
     }
-    .slogan-container {
-      margin-top: 40px;
+    .slogan__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 470px;
+      background: linear-gradient(149deg, #c2f52a, #2af598 41%, #008cfd);
+      margin-top: -58px;
     }
-    .countdown-container {
+    .slogan__container__title {
+      font-family: AvenirNext;
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
+      color: #171b20;
+    }
+    .slogan__container__divider {
+      width: 20px;
+      height: 2px;
+      background-color: #ffffff;
+      margin: 24px 0px;
+    }
+    .slogan__container__date {
+      font-family: NotoSansKR;
+      font-size: 18px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+    .slogan__container__location {
+      font-family: NotoSansKR;
+      font-size: 16px;
+      color: #ffffff;
+      margin-top: 5px;
+    }
+    .slogan__container__triangle {
+      width: 0;
+      height: 0;
+      border-bottom: 100px solid white;
+      border-left: 100px solid transparent;
+    }
+    .dday__container {
       display: flex;
       flex-direction: row;
-      justify-content: center;
-      padding: 10px 0px;
-      background: #444444;
+      width: 100%;
+      height: 62px;
+      background-color: rgba(39, 43, 46, 0.92);
+      position: fixed;
+      bottom: 0px;
+      z-index: 99;
     }
-    .countdown-item {
-      border-radius: 10px;
+    .dday__container__item {
+      flex-grow: 1;
+      font-family: NotoSansKR;
+      font-size: 18px;
+      color: #ffffff;
+      line-height: 62px;
       text-align: center;
-      color: yellow;
-      margin: 2px;
-      padding: 8px;
-      background: rgba(0,0,0,.6);
     }
-    .register-button {
+    .dday__container__register {
+      width: 128px;
+      height: 100%;
+      background-color: #272b2e;
+      font-family: NotoSansKR;
+      font-size: 18px;
+      font-weight: bold;
+      color: #17ffbc;
+      line-height: 62px;
+      text-align: center;
+    }
+    .schedule__container {
       display: flex;
       justify-content: center;
-      margin: 10px;
+      margin-top: 30px;
     }
-    .register-button > a {
-      background: cadetblue;
+    .schedule__container > a {
+      width: 240px;
+      height: 22px;
+      padding: 20px 0px;
+      background-image: linear-gradient(to right, #1accbf, #008cfd);
+      font-family: NotoSansKR;
+      font-size: 18px;
       color: white;
       text-decoration: none;
       text-align: center;
-      width: 100px;
-      padding: 5px;
     }
     div[role="list"] {
       display: flex;
@@ -219,57 +294,72 @@
 
   <!-- navigator -->
   <header>
-    <div class="site-name">Agile Korea'18</div>
-    <div role="button" on="tap:sidebar.toggle" tabindex="0" class="hamburger">☰</div>
+    <amp-img class="header__logo"
+             src="images/logo_main.png"
+             width="55px"
+             height="35px"
+             layout="fixed">
+    </amp-img>
+    <div></div>
+    <div class="header__hamburger"
+         on="tap:sidebar.toggle"
+         role="button"
+         tabindex="0">☰</div>
   </header>
 
   <!-- side bar -->
   <amp-sidebar id="sidebar"
                layout="nodisplay"
-
                side="right">
-    <amp-img src="images/AKC_logo.png"
-             width="100px"
-             height="100px">
-    </amp-img>
-    <div class="divider"></div>
+    <div class="sidebar__header">
+      <amp-img class="sidebar__header__logo"
+               src="images/logo_mainbk.png"
+               width="55px"
+               height="35px"
+               layout="fixed">
+      </amp-img>
+      <div></div>
+      <div class="sidebar__header__close"
+           on="tap:sidebar.close"
+           role="button"
+           tabindex="0">☰</div>
+    </div>
     <ul>
-      <li><a href="schedule.html">SCHEDULE</a></li>
-      <li><a href="https://onoffmix.com/event/111479" target="_blank">REGISTER</a></li>
+      <li><a href="schedule.html">스케쥴</a></li>
       <li><a href="faq.html">FAQ</a></li>
-      <li><a href="https://ko-kr.facebook.com/AgileKoreaConference/" target="_blank">애코 Facebook</a></li>
+      <li><a href="https://onoffmix.com/event/111479" target="_blank">등록하기</a></li>
+      <li><a href="https://ko-kr.facebook.com/AgileKoreaConference/" target="_blank">공식 페이스북</a></li>
     </ul>
   </amp-sidebar>
 
   <!-- scroll to here -->
   <div id="top-page"></div>
 
-  <div class="slogan-container">
-    <amp-img alt='AKC2018 LOGO'
-             width="360"
-             height="150"
-             layout="responsive"
-             src='images/journeyToBeingAgile.png'
-    ></amp-img>
+  <div class="slogan__container">
+    <div class="slogan__container__title">
+      Journey to<br> Being Agile
+    </div>
+    <div class="slogan__container__divider"></div>
+    <div class="slogan__container__date">2018.11.23</div>
+    <div class="slogan__container__location">삼성SDS 서관</div>
+    <div class="slogan__container__triangle"></div>
   </div>
 
   <!-- D-day -->
-  <amp-date-countdown timestamp-seconds="1542931200"
-                      layout="fixed-height"
-                      height="100">
-    <template type="amp-mustache">
-      <div class="countdown-container">
-        <div class="countdown-item">{{d}}<br> days</div>
-        <div class="countdown-item">{{h}}<br> hours</div>
-        <div class="countdown-item">{{m}}<br> minutes</div>
-        <div class="countdown-item">{{s}}<br> seconds</div>
-      </div>
-    </template>
-  </amp-date-countdown>
-
+  <div class="dday__container">
+    <amp-date-countdown class="dday__container__item"
+                        timestamp-seconds="1542931200"
+                        layout="fixed-height"
+                        height="62">
+      <template type="amp-mustache">
+          사전 접수 D-{{d}}
+      </template>
+    </amp-date-countdown>
+    <div class="dday__container__register">등록하기</div>
+  </div>
   <!-- speaker -->
   <div class="speaker-list">
-    <h2>SPEAKER</h2>
+    <h2>Session</h2>
     <amp-list width="auto"
               height="300"
               layout="fixed-height"
@@ -317,12 +407,12 @@
     </div>
   </amp-lightbox>
 
-  <div class="register-button">
-    <a href="schedule.html" target="_blank">상세 스케쥴</a>
+  <div class="schedule__container">
+    <a href="schedule.html" target="_blank">스케줄 보기</a>
   </div>
 
   <div class="location-container">
-    <h2>LOCATION</h2>
+    <h2>Location</h2>
     <h4>삼성SDS타워 서관</h4>
     <p class="location-detail">
       서울 송파구 신천동 삼성SDS타워 서관 지하 1층 마젤란홀, 파스칼홀, 다목적홀
