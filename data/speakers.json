@@ -10,31 +10,31 @@
       "note": "Ahmed Sidky note"
     },
     {
-      "name": "erick lee",
+      "name": "이현찬",
       "company": "삼성SDS",
       "url": "images/speaker/erick_lee.jpg",
-      "track": "마젤란홀",
-      "time": "09:00~10:00",
-      "title": "erick lee title",
-      "note": "erick lee note"
+      "track": "미정",
+      "time": "미정",
+      "title": "Doing Agile을 넘어 Being Agile로의 Agile Transformation",
+      "note": "4차혁명의 극변 시대, 크고 작은 다수의 기업들이 살아남기 위한 전략이나 경쟁력으로 애자일을 도입하고 있지만, 애자일을 Defined 프로세스 형태에 Doing Agile로써 도입 함에 따른 어려움을 많이 겪고들 있습니다.       이번 세션에서는 Being Agile로 기업에 애자일을 적용하는 Agile Transformation에 대한 올바른 이해를 통해 애자일이 보다 실제적인 기업의 전략이자 경쟁력으로 사용될 수 있도록 가이드 및 공유 해 보고자 합니다."
     },
     {
-      "name": "giewook koo",
-      "company": "",
+      "name": "구기욱",
+      "company": "쿠퍼실리테이션그룹",
       "url": "images/speaker/giewook_koo.jpg",
-      "track": "마젤란홀",
-      "time": "09:00~10:00",
-      "title": "giewook koo title",
-      "note": "giewook koo note"
+      "track": "미정",
+      "time": "미정",
+      "title": "조직 Agility",
+      "note": "조직에서 애자일 도입 전략, 어질리티 역장분석, VUCA가 부르는 애자일, 퍼실리테이션이 만드는 애자일"
     },
     {
-      "name": "hyungil cho",
-      "company": "",
+      "name": "조현길",
+      "company": "삼성전자",
       "url": "images/speaker/hyungil_cho.jpg",
-      "track": "마젤란홀",
-      "time": "09:00~10:00",
-      "title": "hyungil cho title",
-      "note": "hyungil cho note"
+      "track": "미정",
+      "time": "미정",
+      "title": "Decentralized Facilitation in Agile",
+      "note": "협력 문화를 촉진하는 Facilitation 은 전통적으로 아날로그, 매뉴얼 작업을 기반으로 많은 것들이 동작합니다. 디지털을 적극적으로 도입하면서 다가올 Decentralized Economy 시대에 어울리는 Facilitation의 발전 방향이 무엇인지 변화상을 제시하고 이에 대해서 서로의 상상과 의견을 나누는 실험적인 워크숍을 진행해보고자 합니다."
     }
   ]
 }
