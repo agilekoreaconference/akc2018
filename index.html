@@ -1,9 +1,10 @@
 <!doctype html>
 <html ⚡>
 <head>
+  <title>Agile Korea Conference 2018</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <link rel="canonical" href="https://agilekoreaconference.github.io">
+  <link rel="canonical" href="https://agilekorea.kr/index.html">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
   <script type="application/ld+json">
@@ -41,6 +42,7 @@
   <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
   <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
   <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+  <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
 
   <style amp-custom>
     header {
@@ -55,12 +57,6 @@
       font-size: 24px;
       font-weight: 900;
       color: #232b31;
-    }
-    a {
-      text-decoration: none;
-    }
-    a:visited {
-      text-decoration: none;
     }
     .button__close {
       font-size: 20px;
@@ -82,7 +78,7 @@
       flex-direction: column;
       align-items: center;
       background: white;
-      width: 100%;
+      width: 100vw;
       height: 278px;
       max-width: 100%;
       text-align: center;
@@ -97,6 +93,10 @@
     }
     #sidebar > ul > li {
       padding: 10px 0px;
+    }
+    #sidebar > ul > li > a {
+      text-decoration: none;
+      color: #232b31;
     }
     .sidebar__header {
       display: grid;
@@ -124,7 +124,7 @@
       border-radius: 100px;
       border: none;
       outline: none;
-      background: #E91E63;
+      background: #2af598;
       z-index: 9999;
       bottom: 78px;
       right: 16px;
@@ -201,12 +201,15 @@
       width: 128px;
       height: 100%;
       background-color: #272b2e;
+      text-align: center;
+    }
+    .dday__section__register > a {
+      text-decoration: none;
       font-family: NotoSansKR;
       font-size: 18px;
       font-weight: bold;
       color: #17ffbc;
       line-height: 62px;
-      text-align: center;
     }
     .link__section {
       display: flex;
@@ -235,6 +238,7 @@
     }
     .session__list__card {
       position: relative;
+      width: 320px;
       height: 327px;
       margin: 0px 10px;
     }
@@ -333,7 +337,9 @@
       line-height: 1.33;
       text-align: center;
       color: #444f57;
-      padding: 38px 15px 62px 15px;
+      margin-top: 38px;
+      margin-bottom: 62px;
+      /*padding: 38px 15px 62px 15px;*/
     }
     .photo2017__section__title {
       font-weight: bold;
@@ -422,8 +428,11 @@
           사전 접수 D-{{d}}
       </template>
     </amp-date-countdown>
-    <div class="dday__section__register">등록하기</div>
+    <div class="dday__section__register">
+      <a href="https://onoffmix.com/event/111479" target="_blank">등록하기</a>
+    </div>
   </div>
+
   <!-- speaker -->
   <div class="session__list">
     <h2>Session</h2>
@@ -433,7 +442,7 @@
               src="data/speakers.json">
       <template type="amp-mustache">
         <div class="session__list__card">
-          <amp-img width="280"
+          <amp-img width="320"
                    height="327"
                    alt="{{name}}"
                    tabindex="0"
@@ -529,21 +538,36 @@
       <amp-img width="360"
                height="300"
                src="images/2017/allmembers.jpg"
+               on="tap:lightbox1"
+               role="button"
+               tabindex="0"
                alt="an image"></amp-img>
       <amp-img width="360"
                height="300"
                src="images/2017/keywords.png"
+               on="tap:lightbox1"
+               role="button"
+               tabindex="0"
                alt="an image"></amp-img>
       <amp-img width="360"
                height="300"
                src="images/2017/IMG_2752.jpg"
+               on="tap:lightbox1"
+               role="button"
+               tabindex="0"
                alt="an image"></amp-img>
       <amp-img width="360"
                height="300"
                src="images/2017/IMG_2935.jpg"
+               on="tap:lightbox1"
+               role="button"
+               tabindex="0"
                alt="an image"></amp-img>
     </amp-carousel>
   </div>
+  <amp-image-lightbox id="lightbox1"
+                      layout="nodisplay">
+  </amp-image-lightbox>
 
   <!-- scroll up -->
   <div id="marker">
@@ -552,7 +576,11 @@
             layout="nodisplay">
     </amp-position-observer>
   </div>
-  <button id="scrollToTopButton" on="tap:top-page.scrollTo(duration=200)" class="scrollToTop">⌃</button>
+  <button id="scrollToTopButton"
+          on="tap:top-page.scrollTo(duration=200)"
+          class="scrollToTop">
+    ⌃
+  </button>
   <amp-animation id="showAnim" layout="nodisplay">
     <script type="application/json">
       {
