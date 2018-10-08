@@ -452,11 +452,8 @@
               layout="fixed-height"
               src="data/speakers.json">
       <template type="amp-mustache">
-        <div class="session__list__card">
-          <amp-img width="320"
-                   height="327"
-                   alt="{{name}}"
-                   tabindex="0"
+        <div class="session__list__card"
+        tabindex="0"
                    role="button"
                    on="tap:AMP.setState(
                     {
@@ -468,7 +465,11 @@
                         title:'{{title}}',
                         note:'{{note}}'
                       }
-                    }),my-lightbox"
+                    }),my-lightbox">
+          <amp-img width="320"
+                   height="327"
+                   alt="{{name}}"
+                   
                    src="{{url}}"></amp-img>
           <div class="session__list__card__note">
             <p>SUBJECT</p>
