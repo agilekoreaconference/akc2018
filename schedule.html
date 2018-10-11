@@ -6,13 +6,301 @@
   <link rel="canonical" href="https://agilekoreaconference.github.io">
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+
+  <style amp-custom>
+    header {
+      display: grid;
+      grid-template-columns: 55px 1fr 58px;
+      width: auto;
+      height: 58px;
+      background: transparent;
+    }
+    h2 {
+      font-family: NotoSansKR;
+      font-size: 24px;
+      font-weight: 900;
+      color: #232b31;
+    }
+    .header__logo {
+      margin: 14px 0px 9px 16px;
+    }
+    .header__hamburger {
+      display: flex;
+      width: 58px;
+      height: 58px;
+      background-color: #ffffff;
+      justify-content: center;
+      align-items: center;
+    }
+    #sidebar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: white;
+      width: 100vw;
+      height: 278px;
+      max-width: 100%;
+      text-align: center;
+      font-size: 20px;
+      font-family: NotoSansKR;
+      color: #232b31;
+    }
+    #sidebar > ul {
+      list-style-type: none;
+      padding: 0px;
+      margin-bottom: 20px;
+    }
+    #sidebar > ul > li {
+      padding: 10px 0px;
+    }
+    #sidebar > ul > li > a {
+      text-decoration: none;
+      color: #232b31;
+    }
+    .sidebar__header {
+      display: grid;
+      grid-template-columns: 55px 1fr 58px;
+      width: 100%;
+      height: 58px;
+    }
+    .sidebar__header__logo {
+      margin: 14px 0px 9px 16px;
+    }
+    .sidebar__header__close {
+      display: flex;
+      width: 58px;
+      height: 58px;
+      background-color: #ffffff;
+      justify-content: center;
+      align-items: center;
+    }
+    .slogan__section {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 470px;
+      background: linear-gradient(149deg, #c2f52a, #2af598 41%, #008cfd);
+      margin-top: -58px;
+    }
+    .slogan__section__title {
+      font-family: AvenirNext;
+      font-size: 48px;
+      font-weight: bold;
+      text-align: center;
+      color: #171b20;
+    }
+    .slogan__section__divider {
+      width: 20px;
+      height: 2px;
+      background-color: #ffffff;
+      margin: 24px 0px;
+    }
+    .slogan__section__date {
+      font-family: NotoSansKR;
+      font-size: 18px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+    .slogan__section__location {
+      font-family: NotoSansKR;
+      font-size: 16px;
+      color: #ffffff;
+      margin-top: 5px;
+    }
+    .slogan__section__triangle {
+      border-bottom: 100px solid white;
+      border-left: 100vw solid transparent;
+      position: absolute;
+      top: 370px;
+    }
+    table {
+      text-align: center;
+      font-size: 12px;
+      border-collapse: collapse;
+      margin: 10px;
+    }
+    th {
+      font-weight: normal;
+      color: #008cfd;
+      padding: 10px 5px;
+      border-bottom: 2px solid #666666;
+    }
+    td {
+      padding: 10px 5px;
+      border-bottom: 1px solid #cecece;
+    }
+    .track__location {
+      color: #666666;
+      margin-top: 3px;
+      display: flex;
+    }
+    .schedule__speaker {
+      font-size: 10px;
+      color: #666666;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-  <amp-img alt='AKC2018 LOGO'
-           width="360"
-           height="540"
-           layout="responsive"
-           src='images/schedule_2017.jpg'
-  ></amp-img>
+  <!-- navigator -->
+  <header>
+    <a href="index.html">
+      <amp-img class="header__logo"
+               src="images/logo_main.png"
+               width="55px"
+               height="35px"
+               layout="fixed">
+      </amp-img>
+    </a>
+    <div></div>
+    <div class="header__hamburger"
+         on="tap:sidebar.toggle"
+         role="button"
+         tabindex="0">☰</div>
+  </header>
+
+  <!-- side bar -->
+  <amp-sidebar id="sidebar"
+               layout="nodisplay"
+               side="right">
+    <div class="sidebar__header">
+      <amp-img class="sidebar__header__logo"
+               src="images/logo_mainbk.png"
+               width="55px"
+               height="35px"
+               layout="fixed">
+      </amp-img>
+      <div></div>
+      <div class="sidebar__header__close"
+           on="tap:sidebar.close"
+           role="button"
+           tabindex="0">☰</div>
+    </div>
+    <ul>
+      <li><a href="schedule.html">스케쥴</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="https://booking.naver.com/booking/5/bizes/185789/items/2885535" target="_blank">등록하기</a></li>
+      <li><a href="https://ko-kr.facebook.com/AgileKoreaConference/" target="_blank">공식 페이스북</a></li>
+    </ul>
+  </amp-sidebar>
+
+  <div class="slogan__section">
+    <div class="slogan__section__title">
+      Schedule
+    </div>
+    <div class="slogan__section__divider"></div>
+    <div class="slogan__section__date">2018. 11. 23 FRI</div>
+    <div class="slogan__section__location">삼성SDS 잠실사옥</div>
+    <div class="slogan__section__triangle"></div>
+  </div>
+
+  <!-- schedule table -->
+  <table>
+    <tr>
+      <th></th>
+      <th>Track 1<br>Beyound Agile<br>(전문가)<br>
+        <div class="track__location">
+          <amp-img src="images/pin.png"
+                   width="10px" height="12px" layout="fixed">
+          </amp-img>
+          파스칼홀
+        </div>
+      </th>
+      <th>Track 2<br>Becoming Agile<br>(경험자)<br>
+        <div class="track__location">
+          <amp-img src="images/pin.png"
+                   width="10px" height="12px" layout="fixed">
+          </amp-img>
+          마젤란홀
+        </div>
+      </th>
+      <th>Track 3<br>Intro to Agile<br>(입문자)<br>
+        <div class="track__location">
+          <amp-img src="images/pin.png"
+                   width="10px" height="12px" layout="fixed">
+          </amp-img>
+          다목적홀
+        </div>
+      </th>
+    </tr>
+    <tr>
+      <td>8:30<br>~<br>9:00</td>
+      <td colspan="3">등록 / Registration</td>
+    </tr>
+    <tr>
+      <td>9:00<br>~<br>10:20</td>
+      <td colspan="3">Lean Coffee</td>
+    </tr>
+    <tr>
+      <td>9:00<br>~<br>10:20</td>
+      <td colspan="3">[Keynote] Evolving Agile Leadership<br>A Story of Challenging Convention<br>
+        <div class="schedule__speaker">Ahmed Sidkey / Riot Games</div>
+      </td>
+    </tr>
+    <tr>
+      <td>11:40<br>~<br>12:30</td>
+      <td>조직 Agility<br>
+        <div class="schedule__speaker">구기옥 / 쿠 퍼실리테이션</div>
+      </td>
+      <td>네 프로젝트가<br>내 프로젝트가 되는 여정<br>
+        <div class="schedule__speaker">백미진 / LG전자</div>
+      </td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>12:30<br>~<br>13:30</td>
+      <td colspan="3">점심 식사</td>
+    </tr>
+    <tr>
+      <td>13:30<br>~<br>14:15</td>
+      <td>필수장착<br>애자일 생존배닝<br>
+        <div class="schedule__speaker">권갑중 / 서비스 커넥트</div>
+      </td>
+      <td>전기차와 애자일<br>
+        <div class="schedule__speaker">박상주 / LG전자</div>
+      </td>
+      <td rowspan="2">Decentralized<br>Facilitation in Agile<br>
+        <div class="schedule__speaker">조현길 / 삼성전자</div>
+      </td>
+    </tr>
+    <tr>
+      <td>14:30<br>~<br>15:15</td>
+      <td>대규모 SI에서 효율적으로<br>협업하는 방법<br>
+        <div class="schedule__speaker">심상준 / SK C&amp;C</div>
+      </td>
+      <td>애자일 코치<br>A부터 C까지<br>
+        <div class="schedule__speaker">신원 / 11번가 주식회사</div>
+      </td>
+    </tr>
+    <tr>
+      <td>15:30<br>~<br>16:15</td>
+      <td>고객 접점을 담당하는<br>개발팀의 기민함에 관하여<br>
+        <div class="schedule__speaker">심정호 / 우아한 형제들</div>
+      </td>
+      <td>Doing Agile을 넘어<br>Being Agile로의<br>Agile Transformation<br>
+        <div class="schedule__speaker">이현찬 / 삼성SDS</div>
+      </td>
+      <td rowspan="2">회고 Workshop<br>
+        <div class="schedule__speaker">신혜연 / 삼성SDS</div>
+      </td>
+    </tr>
+    <tr>
+      <td>16:30<br>~<br>17:15</td>
+      <td>삼성SDS 애자일<br>10년의 기억<br>
+        <div class="schedule__speaker">신황규 / 삼성SDS</div>
+      </td>
+      <td>Journey from scrum<br>junior to scrum master<br>
+        <div class="schedule__speaker">김유진 / EA</div>
+      </td>
+    </tr>
+    <tr>
+      <td>17:30<br>~<br>18:00</td>
+      <td colspan="3">회고 / Retrospective</td>
+    </tr>
+  </table>
 </body>
 </html>
