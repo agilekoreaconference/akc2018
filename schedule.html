@@ -194,6 +194,37 @@
       color: #ffffff;
       outline: none;
     }
+    .link__section {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    .link__section > a {
+      width: 240px;
+      height: 22px;
+      padding: 20px 0px;
+      background-image: linear-gradient(to right, #1accbf, #008cfd);
+      font-family: NotoSansKR;
+      font-size: 18px;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+    }
+    footer {
+      height: 160px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .footer__link {
+      display: flex;
+      justify-content: center;
+    }
+    .footer__copyright {
+      display: flex;
+      justify-content: center;
+      margin-top: 18px;
+    }
   </style>
 </head>
 <body>
@@ -365,9 +396,9 @@
 
     <!--PM Session-->
     <amp-list
-            width="auto"
-            height="100"
-            layout="fixed-height"
+            width="360"
+            height="770"
+            layout="responsive"
             [src]="trackInfo[track.selected]"
             src="data/schedule_default.json">
       <template type="amp-mustache">
@@ -393,5 +424,25 @@
       </template>
     </amp-list>
   </div>
+
+  <div class="link__section">
+    <a href="https://booking.naver.com/booking/5/bizes/185789/items/2885535">등록하기</a>
+  </div>
+
+  <footer>
+    <div class="footer__link">
+      <a href="mailto:agilekoreaconference@gmail.com" target="_blank">
+        <amp-img src="images/ic-mail.svg"
+                 width="24" height="24" layout="fixed">
+        </amp-img>
+      </a>
+      <a href="https://www.facebook.com/AgileKoreaConference/" target="_blank">
+        <amp-img src="images/ic-facebook.svg"
+                 width="24" height="24" layout="fixed">
+        </amp-img>
+      </a>
+    </div>
+    <div class="footer__copyright">© 2018 Agile Korea Alliance</div>
+  </footer>
 </body>
 </html>
