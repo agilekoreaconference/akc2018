@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "start": "11 : 40",
+      "end": "12 : 30",
+      "title": "조직 Agility",
+      "name": "구기욱 / 쿠 퍼실리테이션",
+      "location": "파스칼홀",
+      "color": "pascal"
+    },
+    {
+      "start": "12 : 30",
+      "end": "13 : 30",
+      "title": "점심 식사",
+      "name": "",
+      "location": "델라코트 (B1F, B2F)",
+      "color": "default"
+    },
+    {
+      "start": "13 : 30",
+      "end": "14 : 15",
+      "title": "필수장착 애자일 생존배낭",
+      "name": "권갑중 / 서비스 커넥트",
+      "location": "파스칼홀",
+      "color": "pascal"
+    },
+    {
+      "start": "14 : 30",
+      "end": "15 : 15",
+      "title": "대규모 SI에서 효율적으로 협업하는 방법",
+      "name": "심상준 / SK C&C",
+      "location": "파스칼홀",
+      "color": "pascal"
+    },
+    {
+      "start": "15 : 30",
+      "end": "16 : 15",
+      "title": "고객 접점을 담당하는 개발팀의 기민함에 관하여",
+      "name": "심정호 / 우아한 형제들",
+      "location": "파스칼홀",
+      "color": "pascal"
+    },
+    {
+      "start": "16 : 30",
+      "end": "17 : 15",
+      "title": "삼성SDS 애자일 10년의 기억",
+      "name": "신황규 / 삼성SDS",
+      "location": "파스칼홀",
+      "color": "pascal"
+    },
+    {
+      "start": "17 : 30",
+      "end": "18 : 00",
+      "title": "회고",
+      "name": "",
+      "location": "마젤란홀",
+      "color": "default"
+    }
+  ]
+}
