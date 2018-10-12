@@ -3,7 +3,7 @@
     {
       "name": "Ahmed Sidky",
       "company": "Riot Games",
-      "url": "/images/speaker/ahmed_sidky.png",
+      "url": "/images/speaker/00-ahmed.jpg",
       "track": "미정",
       "time": "미정",
       "title": "Key Note",
@@ -12,7 +12,7 @@
     {
       "name": "이현찬",
       "company": "삼성SDS",
-      "url": "images/speaker/erick_lee.png",
+      "url": "images/speaker/01-lee.jpg",
       "track": "미정",
       "time": "미정",
       "title": "Doing Agile을 넘어 Being Agile로의 Agile Transformation",
@@ -21,7 +21,7 @@
     {
       "name": "구기욱",
       "company": "쿠퍼실리테이션그룹",
-      "url": "images/speaker/giewook_koo.png",
+      "url": "images/speaker/01-koo.jpg",
       "track": "미정",
       "time": "미정",
       "title": "조직 Agility",
@@ -30,7 +30,7 @@
     {
       "name": "조현길",
       "company": "삼성전자",
-      "url": "images/speaker/hyungil_cho.png",
+      "url": "images/speaker/03-cho.jpg",
       "track": "미정",
       "time": "미정",
       "title": "Decentralized Facilitation in Agile",

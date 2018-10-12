@@ -6,7 +6,7 @@
   <meta property="author" content="Agile Korea Conference">
   <meta property="description" content="Journey to Being Agile. 2018.11.23 09 잠실 삼성SDS">
   <meta property="keywords" content="Agile Korea, Agile Conference, Agile Korea Conference, 애자일 코리아, 애자일 코리아 컨퍼런스, 애자일 2018, 애코2018">
-  <meta property="og:url" con-tent="https://agilekorea.kr">
+  <meta property="og:url" content="https://agilekorea.kr">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Agile Korea Conference 2018">
   <meta property="og:description" content="Journey to Being Agile. 2018.11.23 09 잠실 삼성SDS">
@@ -64,12 +64,17 @@
       width: auto;
       height: 58px;
       background: transparent;
+      z-index: 2;
+      position: relative;
     }
-    h2 {
+    .section__title {
       font-family: NotoSansKR;
       font-size: 24px;
       font-weight: 900;
       color: #232b31;
+      margin-top: 6px;
+    }
+    .section__bullet {
     }
     .button__close {
       font-size: 20px;
@@ -156,41 +161,50 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 100%;
+      width: 100vw;
       height: 470px;
-      background: linear-gradient(149deg, #c2f52a, #2af598 41%, #008cfd);
       margin-top: -58px;
+      position: relative;
+    }
+    .slogan__section__background {
+      width: 100vw;
+      height: 470px;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
     .slogan__section__title {
-      font-family: AvenirNext;
-      font-size: 48px;
-      font-weight: bold;
-      text-align: center;
-      color: #171b20;
+      position: absolute;
+      top: 106px;
     }
     .slogan__section__divider {
+      position: absolute;
+      top: 256px;
       width: 20px;
       height: 2px;
       background-color: #ffffff;
-      margin: 24px 0px;
     }
     .slogan__section__date {
+      position: absolute;
+      top: 274px;
       font-family: NotoSansKR;
       font-size: 18px;
       font-weight: 900;
       color: #ffffff;
     }
     .slogan__section__location {
+      position: absolute;
+      top: 311px;
       font-family: NotoSansKR;
       font-size: 16px;
       color: #ffffff;
       margin-top: 5px;
     }
     .slogan__section__triangle {
+      position: absolute;
+      bottom: 0px;
       border-bottom: 100px solid white;
       border-left: 100vw solid transparent;
-      position: absolute;
-      top: 370px;
     }
     .dday__section {
       display: flex;
@@ -307,6 +321,8 @@
       justify-content: center;
       align-items: center;
       margin-top: 20px;
+      height: 640px;
+      background: #f8f9fa;
     }
     .location__section__address {
       margin: 10px 30px;
@@ -324,7 +340,18 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 280px;
+      height: 630px;
+    }
+    .sponsor__title {
+      opacity: 0.5;
+      font-family: NotoSansKR;
+      font-size: 12px;
+      letter-spacing: -0.3px;
+      color: #232b31;
+      margin-top: 24px;
+    }
+    .sponsor__logos {
+
     }
     .faq__section {
       display: flex;
@@ -332,14 +359,18 @@
       justify-content: center;
       align-items: center;
       height: 282px;
-      background-color: #f1f4f6;
+      background-image: linear-gradient(136deg, #606b77, #323942);
+    }
+    .faq__section > .section__title {
+      color: #ffffff;
     }
     .faq__section > amp-fit-text {
       font-family: NotoSansKR;
+      font-weight: normal;
       font-size: 16px;
       line-height: 1.5;
       text-align: center;
-      color: #232b31;
+      color: #ffffff;
       margin: 8px 0px 20px 0px;
     }
     .photo2017__section {
@@ -350,14 +381,30 @@
       text-align: center;
       color: #444f57;
       margin-top: 38px;
-      margin-bottom: 62px;
-      /*padding: 38px 15px 62px 15px;*/
     }
     .photo2017__section__title {
-      font-weight: bold;
+      font-family: NotoSansKR;
+      font-size: 16px;
+      line-height: 1.5;
+      text-align: center;
+      color: #232b31;
+      margin: 20px 0;
     }
-    .photo2017__section__subtitle {
-      margin-top: 10px;
+    footer {
+      height: 160px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin-bottom: 62px;
+    }
+    .footer__link {
+      display: flex;
+      justify-content: center;
+    }
+    .footer__copyright {
+      display: flex;
+      justify-content: center;
+      margin-top: 18px;
     }
   </style>
 </head>
@@ -382,17 +429,23 @@
   <header>
     <a href="index.html">
     <amp-img class="header__logo"
-             src="images/logo_main.png"
+             src="images/logo_mainbk.png"
              width="55px"
              height="35px"
              layout="fixed">
     </amp-img>
     </a>
     <div></div>
-    <div class="header__hamburger"
-         on="tap:sidebar.toggle"
-         role="button"
-         tabindex="0">☰</div>
+    <div class="header__hamburger">
+      <amp-img src="images/home_menu.svg"
+               width="30"
+               height="30"
+               layout="fixed"
+               on="tap:sidebar.toggle"
+               role="button"
+               tabindex="0">
+      </amp-img>
+    </div>
   </header>
 
   <!-- side bar -->
@@ -407,10 +460,16 @@
                layout="fixed">
       </amp-img>
       <div></div>
-      <div class="sidebar__header__close"
-           on="tap:sidebar.close"
-           role="button"
-           tabindex="0">☰</div>
+      <div class="sidebar__header__close">
+        <amp-img src="images/home_menu.svg"
+                 width="30"
+                 height="30"
+                 layout="fixed"
+                 on="tap:sidebar.close"
+                 role="button"
+                 tabindex="0">
+        </amp-img>
+      </div>
     </div>
     <ul>
       <li><a href="schedule.html">스케쥴</a></li>
@@ -421,9 +480,18 @@
   </amp-sidebar>
 
   <div class="slogan__section">
-    <div class="slogan__section__title">
-      Journey to<br> Being Agile
-    </div>
+    <amp-img class="slogan__section__background"
+             src="images/main_bg.png"
+             width="auto"
+             height="470"
+             layout="fixed-height">
+    </amp-img>
+    <amp-img class="slogan__section__title"
+             src="images/main_title.svg"
+             width="280"
+             height="140"
+             layout="fixed">
+    </amp-img>
     <div class="slogan__section__divider"></div>
     <div class="slogan__section__date">2018. 11. 23 FRI</div>
     <div class="slogan__section__location">삼성SDS 잠실사옥</div>
@@ -447,7 +515,13 @@
 
   <!-- speaker -->
   <div class="session__list">
-    <h2>Session</h2>
+    <amp-img class="section__bullet"
+             width="12"
+             height="12"
+             layout="fixed"
+             src="images/bullet-title.svg">
+    </amp-img>
+    <div class="section__title">Session</div>
     <amp-list width="auto"
               height="327"
               layout="fixed-height"
@@ -468,7 +542,7 @@
                       }
                     }),my-lightbox">
           <amp-img width="320"
-                   height="327"
+                   height="160"
                    alt="{{name}}"
                    src="{{url}}"></amp-img>
           <div class="session__list__card__note">
@@ -513,22 +587,108 @@
   </div>
 
   <div class="location__section">
-    <h2>Location</h2>
+    <amp-img class="section__bullet"
+             width="12"
+             height="12"
+             layout="fixed"
+             src="images/bullet-title.svg">
+    </amp-img>
+    <div class="section__title">Location</div>
     <p class="location__section__address">
       서울특별시 송파구 신천동 올림픽로 123<br>
-      West Campus 1F
+      삼성SDS 잠실사옥 West Campus B1F<br>
+      (잠실역 7번출구에서 도보 5분)
     </p>
     <!-- generated by naver map -->
     <table class="location__section__map" cellpadding="0" cellspacing="0" width="360"> <tr> <td style="border:1px solid #cecece;"><a href="https://map.naver.com/?query=&searchCoord=&tab=1&lng=f8dd8ad17f50b5419c659a215939ae9a&mapMode=0&mpx=75660f81aaa286be82f58b2c6df7229b271de543712bcd151b57d9f147b75dc045a923f86196d4709ac8942f6a4fcbcb&pinId=12112232&lat=549129cf9af86c5494b92f64cdf54a26&dlevel=11&enc=b64&__pinOnly=false&menu=location&__fromRestorer=true&pinType=site" target="_blank"><amp-img src="http://prt.map.naver.com/mashupmap/print?key=p1538096236242_-1533557123" width="460" height="340" layout="responsive" alt="지도 크게 보기" title="지도 크게 보기"/></a></td> </tr> <tr> <td> <table cellpadding="0" cellspacing="0" width="100%"> <tr> <td height="30" bgcolor="#f9f9f9" align="left" style="padding-left:9px; border-left:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="font-family: tahoma; font-size: 11px; color:#666;">2018.9.28</span>&nbsp;<span style="font-size: 11px; color:#e5e5e5;">|</span>&nbsp;<a style="font-family: dotum,sans-serif; font-size: 11px; color:#666; text-decoration: none; letter-spacing: -1px;" href="https://map.naver.com/?query=&searchCoord=&tab=1&lng=f8dd8ad17f50b5419c659a215939ae9a&mapMode=0&mpx=75660f81aaa286be82f58b2c6df7229b271de543712bcd151b57d9f147b75dc045a923f86196d4709ac8942f6a4fcbcb&pinId=12112232&lat=549129cf9af86c5494b92f64cdf54a26&dlevel=11&enc=b64&__pinOnly=false&menu=location&__fromRestorer=true&pinType=site" target="_blank">지도 크게 보기</a> </td> <td width="98" bgcolor="#f9f9f9" align="right" style="text-align:right; padding-right:9px; border-right:1px solid #cecece; border-bottom:1px solid #cecece;"> <span style="float:right;"><span style="font-size:9px; font-family:Verdana, sans-serif; color:#444;">&copy;&nbsp;</span>&nbsp;<a style="font-family:tahoma; font-size:9px; font-weight:bold; color:#2db400; text-decoration:none;" href="http://www.nhncorp.com" target="_blank">NAVER Corp.</a></span> </td> </tr> </table> </td> </tr> </table>
   </div>
 
   <div class="sponsor__section">
-    <h2>Sponsor</h2>
-    <pre>삼성SDS | Agile Coach | Aba | KI | Woody</pre>
+    <amp-img class="section__bullet"
+             width="12"
+             height="12"
+             layout="fixed"
+             src="images/bullet-title.svg">
+    </amp-img>
+    <div class="section__title">Sponsor & Partners</div>
+
+    <div class="sponsor__title">Title Sponsor</div>
+    <div class="sponsor__logos">
+      <amp-img class="section__bullet"
+               width="140"
+               height="60"
+               layout="fixed"
+               src="images/sponsor/spon-sds.png">
+      </amp-img>
+    </div>
+
+    <div class="sponsor__title">Silver Sponsors</div>
+    <div class="sponsor__logos">
+      <amp-img class="section__bullet"
+               width="90"
+               height="60"
+               layout="fixed"
+               src="images/sponsor/spon-sta.png">
+      </amp-img>
+      <amp-img class="section__bullet"
+               width="90"
+               height="60"
+               layout="fixed"
+               src="images/sponsor/spon-as.png">
+      </amp-img>
+      <amp-img class="section__bullet"
+               width="90"
+               height="60"
+               layout="fixed"
+               src="images/sponsor/spon-aa.png">
+      </amp-img>
+    </div>
+
+    <div class="sponsor__title">Educational Partner</div>
+    <div class="sponsor__logos">
+      <amp-img class="section__bullet"
+               width="90"
+               height="60"
+               layout="fixed"
+               src="images/sponsor/spon-ica.png">
+      </amp-img>
+    </div>
+
+    <div class="sponsor__title">Facilitation Partner</div>
+    <div class="sponsor__logos">
+      <amp-img class="section__bullet"
+               width="90"
+               height="60"
+               layout="fixed"
+               src="images/sponsor/spon-ipp.png">
+      </amp-img>
+    </div>
+
+    <div class="sponsor__title">Media Partner</div>
+    <div class="sponsor__logos">
+      <amp-img class="section__bullet"
+               width="90"
+               height="60"
+               layout="fixed"
+               src="images/sponsor/spon-hbm.png">
+      </amp-img>
+      <amp-img class="section__bullet"
+               width="90"
+               height="60"
+               layout="fixed"
+               src="images/sponsor/spon-ins.png">
+      </amp-img>
+    </div>
   </div>
 
   <div class="faq__section">
-    <h2>FAQ</h2>
+    <amp-img class="section__bullet"
+             width="12"
+             height="12"
+             layout="fixed"
+             src="images/bullet-title.svg">
+    </amp-img>
+    <div class="section__title">FAQ</div>
     <amp-fit-text width="220"
                   height="48"
                   max-font-size="16">
@@ -540,8 +700,14 @@
   </div>
 
   <div class="photo2017__section">
-    <div class="photo2017__section__title">2017<br>Agile Korea Conference</div>
-    <div class="photo2017__section__subtitle">작년 행사 보기</div>
+    <amp-img class="section__bullet"
+             width="12"
+             height="12"
+             layout="fixed"
+             src="images/bullet-title.svg">
+    </amp-img>
+    <div class="section__title">작년행사</div>
+    <div class="photo2017__section__title">2017 Agile Korea Conference</div>
     <amp-carousel height="300"
                   layout="fixed-height"
                   type="slides"
@@ -630,5 +796,21 @@
       }
     </script>
   </amp-animation>
+
+  <footer>
+    <div class="footer__link">
+      <a href="mailto:agilekoreaconference@gmail.com" target="_blank">
+        <amp-img src="images/ic-mail.svg"
+                 width="24" height="24" layout="fixed">
+        </amp-img>
+      </a>
+      <a href="https://www.facebook.com/AgileKoreaConference/" target="_blank">
+        <amp-img src="images/ic-facebook.svg"
+                 width="24" height="24" layout="fixed">
+        </amp-img>
+      </a>
+    </div>
+    <div class="footer__copyright">© 2018 Agile Korea Alliance</div>
+  </footer>
 </body>
 </html>
