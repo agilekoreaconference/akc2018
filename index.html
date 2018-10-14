@@ -135,17 +135,10 @@
       align-items: center;
     }
     .scrollToTop {
-      color: #fafafa;
-      font-size: 1.4em;
-      box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
       width: 48px;
       height: 48px;
-      border-radius: 100px;
-      border: none;
-      outline: none;
-      background: #2af598;
-      z-index: 9999;
-      bottom: 78px;
+      z-index: 1;
+      bottom: 82px;
       right: 16px;
       position: fixed;
       opacity: 0;
@@ -757,11 +750,16 @@
             layout="nodisplay">
     </amp-position-observer>
   </div>
-  <button id="scrollToTopButton"
-          on="tap:top-page.scrollTo(duration=200)"
-          class="scrollToTop">
-    ⌃
-  </button>
+  <amp-img id="scrollToTopButton"
+           on="tap:top-page.scrollTo(duration=200)"
+           tabindex="0"
+           role="button"
+           class="scrollToTop"
+           width="48"  height="48"
+           layout="fixed"
+           src="images/totop.svg">
+  </amp-img>
+
   <amp-animation id="showAnim" layout="nodisplay">
     <script type="application/json">
       {
