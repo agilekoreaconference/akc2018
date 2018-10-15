@@ -56,7 +56,6 @@
   <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
   <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
   <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
-  <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
 
   <style amp-custom>
     header {
@@ -74,8 +73,10 @@
       font-weight: 900;
       color: #232b31;
       margin-top: 6px;
+      margin-bottom: 20px;
     }
     .section__bullet {
+      margin-top: 40px;
     }
     .header__logo {
       margin: 14px 0px 9px 16px;
@@ -231,6 +232,7 @@
     .link__section {
       display: flex;
       justify-content: center;
+      margin: 40px 0;
     }
     .link__section > a {
       width: 240px;
@@ -361,7 +363,7 @@
       font-family: "Noto Sans KR";
       font-size: 16px;
       color: #232b31;
-      max-height: 282px;
+      height: auto;
       overflow: scroll;
       -webkit-overflow-scrolling: touch;
     }
@@ -370,8 +372,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin-top: 20px;
-      height: 640px;
       background: #f8f9fa;
     }
     .location__section__address {
@@ -390,7 +390,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 630px;
     }
     .sponsor__title {
       opacity: 0.5;
@@ -408,7 +407,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 282px;
       background-image: linear-gradient(136deg, #606b77, #323942);
     }
     .faq__section > .section__title {
@@ -421,7 +419,6 @@
       line-height: 1.5;
       text-align: center;
       color: #ffffff;
-      margin: 8px 0px 20px 0px;
     }
     .photo2017__section {
       background: white;
@@ -430,7 +427,6 @@
       line-height: 1.33;
       text-align: center;
       color: #444f57;
-      margin-top: 38px;
     }
     .photo2017__section__title {
       font-family: "Noto Sans KR";
@@ -690,7 +686,7 @@
              layout="fixed"
              src="images/bullet-title.svg">
     </amp-img>
-    <div class="section__title">Sponsor & Partners</div>
+    <div class="section__title">Sponsors & Partners</div>
 
     <div class="sponsor__title">Title Sponsor</div>
     <div class="sponsor__logos">
@@ -796,36 +792,21 @@
       <amp-img width="360"
                height="300"
                src="images/2017/allmembers.jpg"
-               on="tap:lightbox1"
-               role="button"
-               tabindex="0"
                alt="an image"></amp-img>
       <amp-img width="360"
                height="300"
                src="images/2017/keywords.png"
-               on="tap:lightbox1"
-               role="button"
-               tabindex="0"
                alt="an image"></amp-img>
       <amp-img width="360"
                height="300"
                src="images/2017/IMG_2752.jpg"
-               on="tap:lightbox1"
-               role="button"
-               tabindex="0"
                alt="an image"></amp-img>
       <amp-img width="360"
                height="300"
                src="images/2017/IMG_2935.jpg"
-               on="tap:lightbox1"
-               role="button"
-               tabindex="0"
                alt="an image"></amp-img>
     </amp-carousel>
   </div>
-  <amp-image-lightbox id="lightbox1"
-                      layout="nodisplay">
-  </amp-image-lightbox>
 
   <!-- scroll up -->
   <div id="marker">
