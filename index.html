@@ -304,7 +304,6 @@
       align-items: flex-start;
       justify-content: flex-start;
       width: calc(100vw - 52px);
-      height: calc(100vh - 68px);
       margin: 10px 10px;
       padding: 18px 14px 30px 18px;
       background: #ffffff;
@@ -365,7 +364,7 @@
       color: #232b31;
       height: auto;
       overflow: scroll;
-      -webkit-overflow-scrolling: touch;
+      max-height: 282px;
     }
     .location__section {
       display: flex;
@@ -615,7 +614,8 @@
   </div>
   <!--speaker detail popup-->
   <amp-lightbox id="my-lightbox"
-                layout="nodisplay">
+                layout="nodisplay"
+                scrollable>
     <div class="speaker__ligthbox">
       <div class="speaker__ligthbox__header">
         <amp-img class="speaker__ligthbox__profile"
