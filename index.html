@@ -77,10 +77,6 @@
     }
     .section__bullet {
     }
-    .button__close {
-      font-size: 20px;
-      padding: 10px;
-    }
     .header__logo {
       margin: 14px 0px 9px 16px;
     }
@@ -275,7 +271,7 @@
       text-align: left;
       padding: 18px 20px;
     }
-    .session__list__card__note > p {
+    .subtitle {
       font-family: "Noto Sans KR";
       font-size: 14px;
       font-weight: bold;
@@ -304,11 +300,69 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      justify-content: center;
-      width: calc(100vw - 60px);
-      height: calc(100vh - 60px);
-      padding: 30px;
-      background: rgba(255,255,255,.95);
+      justify-content: flex-start;
+      width: calc(100vw - 52px);
+      height: calc(100vh - 68px);
+      margin: 10px 10px;
+      padding: 18px 14px 30px 18px;
+      background: #ffffff;
+    }
+    .speaker__ligthbox__header {
+      display: grid;
+      grid-template-columns: 80px 1fr 40px;
+      width: inherit;
+      height: 80px;
+    }
+    .speaker__ligthbox__profile {
+      flex-grow: 10;
+      border-radius: 38px;
+    }
+    .speaker__ligthbox__close {
+      flex-grow: 1;
+    }
+    .speaker__ligthbox__middle {
+      padding: 20px 6px 17px 6px;
+      border-bottom: 1px solid #dee2e6;
+    }
+    .speaker__ligthbox__middle__title {
+      font-family: "Noto Sans KR";
+      font-size: 20px;
+      line-height: 1.5;
+      letter-spacing: -0.3px;
+      color: #232b31;
+      margin-top: 4px;
+    }
+    .speaker__ligthbox__middle__name {
+      font-family: "Noto Sans KR";
+      font-size: 16px;
+      color: #232b31;
+      opacity: 0.5;
+      margin-top: 6px;
+    }
+    .speaker__ligthbox__middle__time {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-family: "Noto Sans KR";
+      font-size: 16px;
+      color: #232b31;
+      opacity: 0.8;
+      margin-top: 14px;
+    }
+    .speaker__ligthbox__middle__time > amp-img {
+      margin-right: 4px;
+    }
+    .speaker__ligthbox__middle__time > div {
+      margin-right: 20px;
+    }
+    .speaker__ligthbox__note {
+      margin-top: 20px;
+      opacity: 0.8;
+      font-family: "Noto Sans KR";
+      font-size: 16px;
+      color: #232b31;
+      max-height: 282px;
+      overflow: scroll;
     }
     .location__section {
       display: flex;
@@ -411,6 +465,7 @@
         "url": "images/empty_profile.png",
         "track": "track",
         "time": "00:00~00:00",
+        "location": "location",
         "title": "title",
         "note": "note"
       }
@@ -533,6 +588,7 @@
                         url:'{{url}}',
                         track:'{{track}}',
                         time:'{{time}}',
+                        location: '{{location}}',
                         title:'{{title}}',
                         note:'{{note}}'
                       }
@@ -542,7 +598,7 @@
                    alt="{{name}}"
                    src="{{url}}"></amp-img>
           <div class="session__list__card__note">
-            <p>SUBJECT</p>
+            <p class="subtitle">SUBJECT</p>
             <amp-fit-text class="session__list__card__note__subject"
                           width="240"
                           height="60"
@@ -558,23 +614,50 @@
       </template>
     </amp-list>
   </div>
+  <!--speaker detail popup-->
   <amp-lightbox id="my-lightbox"
                 layout="nodisplay">
     <div class="speaker__ligthbox">
-      <div class="button__close"
-            on="tap:my-lightbox.close"
-            role="button"
-            tabindex="0">X</div>
-      <amp-img width="320"
-               height="327"
-               [alt]="name"
-               src="images/empty_profile.png"
-               [src]="selectedSpeaker.url"></amp-img>
-      <p [text]="selectedSpeaker.name">nobody</p>
-      <p [text]="selectedSpeaker.track">track</p>
-      <p [text]="selectedSpeaker.time">00:00~00:00</p>
-      <p [text]="selectedSpeaker.title">title</p>
-      <p [text]="selectedSpeaker.note">note</p>
+      <div class="speaker__ligthbox__header">
+        <amp-img class="speaker__ligthbox__profile"
+                 width="80"
+                 height="80"
+                 layout="fixed"
+                 [alt]="name"
+                 src="images/empty_profile.png"
+                 [src]="selectedSpeaker.url"></amp-img>
+        <div></div>
+        <amp-img class="speaker__ligthbox__close"
+                 width="30"
+                 height="30"
+                 layout="fixed"
+                 on="tap:my-lightbox.close"
+                 role="button"
+                 src="images/ic-home-close.svg"
+                 tabindex="0">
+        </amp-img>
+      </div>
+      <div class="speaker__ligthbox__middle">
+        <p class="subtitle"
+           [text]="selectedSpeaker.track">
+          track
+        </p>
+        <div class="speaker__ligthbox__middle__title"
+           [text]="selectedSpeaker.title">title</div>
+        <div class="speaker__ligthbox__middle__name"
+           [text]="selectedSpeaker.name">nobody</div>
+        <div class="speaker__ligthbox__middle__time">
+          <amp-img width="16" height="16" layout="fixed"
+                   src="images/time.svg"></amp-img>
+          <div [text]="selectedSpeaker.time">00:00~00:00</div>
+          <amp-img width="16" height="16" layout="fixed"
+                   src="images/location.svg"></amp-img>
+          <div [text]="selectedSpeaker.location">location</div>
+        </div>
+      </div>
+      <div class="speaker__ligthbox__note"
+           [text]="selectedSpeaker.note">note
+      </div>
     </div>
   </amp-lightbox>
 
