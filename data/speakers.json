@@ -35,6 +35,87 @@
       "time": "미정",
       "title": "Decentralized Facilitation in Agile",
       "note": "협력 문화를 촉진하는 Facilitation 은 전통적으로 아날로그, 매뉴얼 작업을 기반으로 많은 것들이 동작합니다. 디지털을 적극적으로 도입하면서 다가올 Decentralized Economy 시대에 어울리는 Facilitation의 발전 방향이 무엇인지 변화상을 제시하고 이에 대해서 서로의 상상과 의견을 나누는 실험적인 워크숍을 진행해보고자 합니다."
+    },
+    {
+      "name": "신정호",
+      "company": "우아한 형제들",
+      "url": "images/empty_profile.png",
+      "track": "미정",
+      "time": "미정",
+      "title": "고객 점접을 담당하는 개발팀의 기민함에 관하여",
+      "note": "서비스 개선과 확장/팀 우선순위/장애대응/팀리듬(Team Rhythm) '배달의민족' 고객 점접을 담당하는 개발팀의 영역은 대규모 트래픽을 처리해야 하고 많은 양의 데이터 중 알맞는 데이터를 고객에게 전달해야 합니다. 따라서 기존의 제한적인 시스템들을 개선하여 기능을 확장하고 고객에게 쾌적한 환경을 제공하는데 팀은 주력해야 합니다. 이처럼 빠르게 변화되는 시점에서 팀의 상황은 개선과 확장을 고려하며 상당한 업무 양을 감당해야 하기 때문에 효과적인 업무 우선순위를 도출해야 합니다. 또한 사용자의 증가와 시스템의 변화 가운데 일어나는 여러가지 장애 상황은 팀을 더욱 어려운 상황으로 내몰리도록 만들기 때문에 신속하게 방안들을 모색하여 해결해야 합니다. 이런 상황에 처해있는 팀은 쉽게 탈진이 되거나 한 가지 상황에 매몰되는 경우가 허다하기 때문에 팀이 가지고 있는 리듬감을 파악하여 상황에 맞게 조절해야 합니다. 팀의 리듬을 깨지 않기 위해 치고 들어오는 상황들을 막으면서 업무를 처리해야 할 때도 있고, 때로는 빠른 템포로 변화하여 넘기 어려운 상황들을 해결해야 할 때도 있습니다. 물론 이와 반대로 템포를 느리게 하여 페이스 조절을 도모해야 할 때도 있습니다. 이렇게 열거된 내용에 대해서 본인의 경험을 공유하려 합니다."
+    },
+    {
+      "name": "심상준",
+      "company": "SK C&C",
+      "url": "images/empty_profile.png",
+      "track": "미정",
+      "time": "미정",
+      "title": "대규모 SI에서 효율적으로 협업하는 방법",
+      "note": "여러개의 스크럼팀이 동시에 진행되는 대규모 SI프로젝트에서 효율적으로 Comm. 하고 협업하는 방법을 사례를 기반으로 소개 - 개발팀내 우선순위 공유, 보조 Comm.수단 - 기획/개발 원격 스크럼미팅, SB리뷰 - 팀간 균형있는 업무 밸런싱을 위한 가변 scrum team, tech leader 협의체 - Sprint내 개발/QA간 품질 프로세스 및 상생협력방안"
+    },
+    {
+      "name": "신원",
+      "company": "11번가 주식회사",
+      "url": "images/empty_profile.png",
+      "track": "미정",
+      "time": "미정",
+      "title": "애자일 코치 A부터 C까지",
+      "note": "개발팀내에서, 하나의 팀으로, 여러개의 팀이 함께 등 애자일을 적용하기 위해 반드시 필요한 애자일코치 혹은 스크럼 마스터에 대해 이해하는 시간을 갖습니다. - 애자일 코치가 무엇을 하는 사람인지 소개 - 애자일 코치의 오해와 진실 - 단계별 상황에 따른 애자일 코치의 역할 - 애자일 코치가 되기 위한 과정"
+    },
+    {
+      "name": "김유진",
+      "company": "Electronic Arts (EA)",
+      "url": "images/empty_profile.png",
+      "track": "미정",
+      "time": "미정",
+      "title": "Journey from scrum junior to scrum master",
+      "note": "1. Scrum master로써의 역할을 define 해보기 2. 차근차근 scrum master 역할을 시작해보기 3. 진짜 Agile 하기 - start with yourself first 4. Connect the dots - 고민하고 insight를 발견하고 서로 나누기"
+    },
+    {
+      "name": "박상주",
+      "company": "LG전자",
+      "url": "images/empty_profile.png",
+      "track": "미정",
+      "time": "미정",
+      "title": "전기차와 애자일",
+      "note": "전기차 시대의 자동차 산업이 요구하는 애자일 동향"
+    },
+    {
+      "name": "신황규",
+      "company": "삼성SDS",
+      "url": "images/empty_profile.png",
+      "track": "미정",
+      "time": "미정",
+      "title": "삼성SDS 애자일 10년의 기억",
+      "note": "Rank 중심의 삼성SDS가 Role 중심 조직으로 거듭나기까지의 10년간의 시도를 담아 발표합니다."
+    },
+    {
+      "name": "신혜연",
+      "company": "삼성SDS",
+      "url": "images/empty_profile.png",
+      "track": "미정",
+      "time": "미정",
+      "title": "회고 workshop",
+      "note": "Agile Coach로 활동하다 보니, 팀의 변화 시킬수 있는 가장 쉬운 방법 중 하나가 바로 회고 였습니다. 실제로 해보고 싶은데 방법을 모르는 사람들도 많았고, 어떤 종류를 사용하면 좋을지도 많이 몰랐습니다. 더불어 Agile 2018 컨퍼런스에 참여 하였었는데, 그곳에서도 입문자를 위한 Retrospective 세션이 있었습니다. 회고의 순서를 설명하고 직접 실습 해보는 것만으로도 참여하신 분들에게 큰 인사이트가 될것 입니다."
+    },
+    {
+      "name": "권갑중",
+      "company": "조아라",
+      "url": "images/empty_profile.png",
+      "track": "미정",
+      "time": "미정",
+      "title": "필수장착 애자일 생존배낭",
+      "note": " 1. 애자일 in 매트릭스,레닌 2. 애자일한 성장 - 왼손은 거들 뿐 3. Agile Life Sack"
+    },
+    {
+      "name": "백미진",
+      "company": "LG전자",
+      "url": "images/empty_profile.png",
+      "track": "미정",
+      "time": "미정",
+      "title": "네 프로젝트가 내 프로젝트가 되는 여정",
+      "note": "프로젝트 전체 그림을 그리고 프로젝트 가시화하기, 프로젝트 멤버와 이해관계자가 같은 비전 공유하기, 프로젝트 요구사항의 디펜던시 드러내기, Agile portfolio management, User story mapping"
     }
   ]
 }
