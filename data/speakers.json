@@ -3,7 +3,8 @@
     {
       "name": "Ahmed Sidky",
       "company": "Riot Games",
-      "url": "/images/speaker/00-ahmed.jpg",
+      "img": "/images/speaker/ahmed.jpg",
+      "sImg": "/images/speaker/ahmed_s.jpg",
       "track": "Key Note",
       "time": "10:30 - 11:30",
       "location" : "마젤란홀",
@@ -13,7 +14,8 @@
     {
       "name": "이현찬",
       "company": "삼성SDS",
-      "url": "images/speaker/01-lee.jpg",
+      "img": "images/speaker/lee_hc.jpg",
+      "sImg": "images/speaker/lee_hc_s.jpg",
       "track": "Track 2 : Becoming Agile(경험자)",
       "time": "15:30 - 16:15",
       "location" : "마젤란홀",
@@ -23,7 +25,8 @@
     {
       "name": "구기욱",
       "company": "쿠퍼실리테이션그룹",
-      "url": "images/speaker/01-koo.jpg",
+      "img": "images/speaker/koo_gw.jpg",
+      "sImg": "images/speaker/koo_gw_s.jpg",
       "track": "Track 1 : Beyond Agile(전문가)",
       "time": "11:40 - 12:30",
       "location" : "파스칼홀",
@@ -33,7 +36,8 @@
     {
       "name": "조현길",
       "company": "삼성전자",
-      "url": "images/speaker/03-cho.jpg",
+      "img": "images/speaker/cho_hg.jpg",
+      "sImg": "images/speaker/cho_hg_s.jpg",
       "track": "Track 3 : Intro to Agile(입문자)",
       "time": "13:50 - 15:15",
       "location" : "다목적홀",
@@ -43,7 +47,8 @@
     {
       "name": "신정호",
       "company": "우아한 형제들",
-      "url": "images/empty_profile.png",
+      "img": "images/empty_profile_L.png",
+      "sImg": "images/empty_profile.png",
       "track": "Track 1 : Beyond Agile(전문가)",
       "time": "15:30-16:15",
       "location" : "파스칼홀",
@@ -53,7 +58,8 @@
     {
       "name": "심상준",
       "company": "SK C&C",
-      "url": "images/empty_profile.png",
+      "img": "images/empty_profile_L.png",
+      "sImg": "images/empty_profile.png",
       "track": "Track 1 : Beyond Agile(전문가)",
       "time": "14:30 - 15:15",
       "location" : "파스칼홀",
@@ -63,7 +69,8 @@
     {
       "name": "신원",
       "company": "11번가 주식회사",
-      "url": "images/empty_profile.png",
+      "img": "images/empty_profile_L.png",
+      "sImg": "images/empty_profile.png",
       "track": "Track 2 : Becoming Agile(경험자)",
       "time": "14:30 - 15:15",
       "location" : "마젤란홀",
@@ -73,7 +80,8 @@
     {
       "name": "김유진",
       "company": "Electronic Arts (EA)",
-      "url": "images/empty_profile.png",
+      "img": "images/empty_profile_L.png",
+      "sImg": "images/empty_profile.png",
       "track": "Track 2 : Becoming Agile(경험자)",
       "time": "16:30 - 17:15",
       "location" : "마젤란홀",
@@ -83,7 +91,8 @@
     {
       "name": "박상주",
       "company": "LG전자",
-      "url": "images/empty_profile.png",
+      "img": "images/empty_profile_L.png",
+      "sImg": "images/empty_profile.png",
       "track": "Track 2 : Becoming Agile(경험자)",
       "time": "13:30-14:15",
       "location" : "마젤란홀",
@@ -93,7 +102,8 @@
     {
       "name": "신황규",
       "company": "삼성SDS",
-      "url": "images/empty_profile.png",
+      "img": "images/empty_profile_L.png",
+      "sImg": "images/empty_profile.png",
       "track": "Track 1 : Beyond Agile(전문가)",
       "time": "16:30 - 17:15",
       "location" : "파스칼홀",
@@ -103,7 +113,8 @@
     {
       "name": "신혜연",
       "company": "삼성SDS",
-      "url": "images/empty_profile.png",
+      "img": "images/empty_profile_L.png",
+      "sImg": "images/empty_profile.png",
       "track": "Track 3 : Intro to Agile(입문자)",
       "time": "15:30 - 17:15",
       "location" : "다목적홀",
@@ -113,7 +124,8 @@
     {
       "name": "권갑중",
       "company": "서비스 커넥트",
-      "url": "images/empty_profile.png",
+      "img": "images/empty_profile_L.png",
+      "sImg": "images/empty_profile.png",
       "track": "Track 1 : Beyond Agile(전문가)",
       "time": "13:30-14:15",
       "location" : "파스칼홀",
@@ -123,7 +135,8 @@
     {
       "name": "백미진",
       "company": "LG전자",
-      "url": "images/empty_profile.png",
+      "img": "images/empty_profile_L.png",
+      "sImg": "images/empty_profile.png",
       "track": "Track 2 : Becoming Agile(경험자)",
       "time": "11:40 - 12:30",
       "location" : "마젤란홀",

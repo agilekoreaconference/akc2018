@@ -459,7 +459,8 @@
     <script type="application/json">
       {
         "name": "nobody",
-        "url": "images/empty_profile.png",
+        "img": "images/empty_profile_L.png",
+        "sImg": "images/empty_profile.png",
         "track": "track",
         "time": "00:00~00:00",
         "location": "location",
@@ -582,7 +583,8 @@
                     {
                       selectedSpeaker:{
                         name:'{{name}}',
-                        url:'{{url}}',
+                        img:'{{img}}',
+                        sImg:'{{sImg}}',
                         track:'{{track}}',
                         time:'{{time}}',
                         location: '{{location}}',
@@ -593,7 +595,7 @@
           <amp-img width="320"
                    height="160"
                    alt="{{name}}"
-                   src="{{url}}"></amp-img>
+                   src="{{img}}"></amp-img>
           <div class="session__list__card__note">
             <p class="subtitle">{{track}}</p>
             <amp-fit-text class="session__list__card__note__subject"
@@ -622,7 +624,7 @@
                  layout="fixed"
                  [alt]="name"
                  src="images/empty_profile.png"
-                 [src]="selectedSpeaker.url"></amp-img>
+                 [src]="selectedSpeaker.sImg"></amp-img>
         <div></div>
         <amp-img class="speaker__ligthbox__close"
                  width="30"
