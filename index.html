@@ -520,6 +520,15 @@
       justify-content: center;
       margin-top: 18px;
     }
+    .pascal {
+      color: #0674d8
+    }
+    .magellan {
+      color: #00a6c5
+    }
+    .multi {
+      color: #06ce83
+    }
   </style>
 </head>
 <body>
@@ -532,6 +541,7 @@
         "track": "track",
         "time": "00:00~00:00",
         "location": "location",
+        "color": "default",
         "title": "title",
         "note": "note"
       }
@@ -659,27 +669,30 @@
               src="data/speakers.json">
       <template type="amp-mustache">
         <div class="session__list__card"
-        tabindex="0"
-                   role="button"
-                   on="tap:AMP.setState(
-                    {
-                      selectedSpeaker:{
-                        name:'{{name}}',
-                        img:'{{img}}',
-                        sImg:'{{sImg}}',
-                        track:'{{track}}',
-                        time:'{{time}}',
-                        location: '{{location}}',
-                        title:'{{title}}',
-                        note:'{{note}}'
-                      }
-                    }),my-lightbox">
+             tabindex="0"
+             role="button"
+             on="tap:AMP.setState(
+              {
+                selectedSpeaker:{
+                  name:'{{name}}',
+                  img:'{{img}}',
+                  sImg:'{{sImg}}',
+                  track:'{{track}}',
+                  time:'{{time}}',
+                  location: '{{location}}',
+                  title:'{{title}}',
+                  note:'{{note}}',
+                  color: '{{color}}'
+                }
+              }),my-lightbox">
           <amp-img width="320"
                    height="160"
                    alt="{{name}}"
                    src="{{img}}"></amp-img>
           <div class="session__list__card__note">
-            <p class="subtitle">{{track}}</p>
+            <p class="subtitle"
+               [class]="'subtitle {{color}}'"
+            >{{track}}</p>
             <amp-fit-text class="session__list__card__note__subject"
                           width="240"
                           height="60"
@@ -721,6 +734,7 @@
       </div>
       <div class="speaker__ligthbox__middle">
         <p class="subtitle"
+           [class]="'subtitle ' + selectedSpeaker.color"
            [text]="selectedSpeaker.track">
           track
         </p>
