@@ -156,9 +156,10 @@
       height: 470px;
       margin-top: -58px;
       position: relative;
+      background: linear-gradient(149deg, #c2f52a, #2af598 21%, #008cfd);
     }
     .slogan__section__background {
-      width: 100vw;
+      width: 330px;
       height: 470px;
       position: absolute;
       top: 0;
@@ -232,7 +233,8 @@
     .link__section {
       display: flex;
       justify-content: center;
-      margin: 40px 0;
+      padding: 40px 0;
+      position: relative;
     }
     .link__section > a {
       width: 240px;
@@ -244,6 +246,7 @@
       color: white;
       text-decoration: none;
       text-align: center;
+      z-index: 2;
     }
     div[role="list"] {
       display: flex;
@@ -254,6 +257,12 @@
       text-align: center;
       padding: 0px 9px;
       margin-bottom: 30px;
+    }
+    .session__background {
+      position: absolute;
+      bottom: -120px;
+      right: -160px;
+      z-index: -1;
     }
     .session__list__card {
       position: relative;
@@ -304,6 +313,7 @@
       align-items: flex-start;
       justify-content: flex-start;
       width: calc(100vw - 52px);
+      height: calc(100vh - 68px);
       margin: 10px 10px;
       padding: 18px 14px 30px 18px;
       background: #ffffff;
@@ -383,6 +393,7 @@
     }
     .location__section__map {
       text-align: center;
+      margin: 40px 0;
     }
     .sponsor__section {
       display: flex;
@@ -406,6 +417,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      position: relative;
       background-image: linear-gradient(136deg, #606b77, #323942);
     }
     .faq__section > .section__title {
@@ -418,6 +430,11 @@
       line-height: 1.5;
       text-align: center;
       color: #ffffff;
+    }
+    .faq__section__background {
+      position: absolute;
+      top: 17px;
+      left: 0;
     }
     .photo2017__section {
       background: white;
@@ -527,10 +544,10 @@
 
   <div class="slogan__section">
     <amp-img class="slogan__section__background"
-             src="images/main_bg.png"
-             width="auto"
+             src="images/main-slogan-left-bg.png"
+             width="330"
              height="470"
-             layout="fixed-height">
+             layout="fixed">
     </amp-img>
     <amp-img class="slogan__section__title"
              src="images/main_title.svg"
@@ -662,6 +679,14 @@
 
   <div class="link__section">
     <a href="schedule.html">스케줄 보기</a>
+    <amp-img class="session__background"
+             amp-fx="parallax"
+             data-parallax-factor="1.1"
+             src="images/main-session-bg.svg"
+             layout="fixed"
+             width="360"
+             height="360">
+    </amp-img>
   </div>
 
   <div class="location__section">
@@ -692,8 +717,7 @@
 
     <div class="sponsor__title">Title Sponsor</div>
     <div class="sponsor__logos">
-      <amp-img class="section__bullet"
-               width="140"
+      <amp-img width="140"
                height="60"
                layout="fixed"
                src="images/sponsor/spon-sds.png">
@@ -702,20 +726,17 @@
 
     <div class="sponsor__title">Silver Sponsors</div>
     <div class="sponsor__logos">
-      <amp-img class="section__bullet"
-               width="90"
+      <amp-img width="90"
                height="60"
                layout="fixed"
                src="images/sponsor/spon-sta.png">
       </amp-img>
-      <amp-img class="section__bullet"
-               width="90"
+      <amp-img width="90"
                height="60"
                layout="fixed"
                src="images/sponsor/spon-as.png">
       </amp-img>
-      <amp-img class="section__bullet"
-               width="90"
+      <amp-img width="90"
                height="60"
                layout="fixed"
                src="images/sponsor/spon-aa.png">
@@ -724,8 +745,7 @@
 
     <div class="sponsor__title">Educational Partner</div>
     <div class="sponsor__logos">
-      <amp-img class="section__bullet"
-               width="90"
+      <amp-img width="90"
                height="60"
                layout="fixed"
                src="images/sponsor/spon-ica.png">
@@ -734,8 +754,7 @@
 
     <div class="sponsor__title">Facilitation Partner</div>
     <div class="sponsor__logos">
-      <amp-img class="section__bullet"
-               width="90"
+      <amp-img width="90"
                height="60"
                layout="fixed"
                src="images/sponsor/spon-ipp.png">
@@ -744,14 +763,12 @@
 
     <div class="sponsor__title">Media Partner</div>
     <div class="sponsor__logos">
-      <amp-img class="section__bullet"
-               width="90"
+      <amp-img width="90"
                height="60"
                layout="fixed"
                src="images/sponsor/spon-hbm.png">
       </amp-img>
-      <amp-img class="section__bullet"
-               width="90"
+      <amp-img width="90"
                height="60"
                layout="fixed"
                src="images/sponsor/spon-ins.png">
@@ -775,6 +792,12 @@
     <div class="link__section">
       <a href="faq.html" target="_blank">FAQ 바로가기</a>
     </div>
+    <amp-img class="faq__section__background"
+             src="images/main-faq-bg.svg"
+             layout="fixed"
+             width="360"
+             height="232">
+    </amp-img>
   </div>
 
   <div class="photo2017__section">
