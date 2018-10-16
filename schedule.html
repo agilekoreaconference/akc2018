@@ -164,7 +164,7 @@
       outline: none;
       margin-top: 10px;
     }
-    .schedule__selector {
+    .schedule__selector__pascal, .schedule__selector__magellan, .schedule__selector__multi {
       display: inline-block;
       width: 70px;
       height: 93px;
@@ -191,8 +191,18 @@
     amp-selector:not([disabled]) {
       color: black;
     }
-    amp-selector .schedule__selector[option][selected] {
+    amp-selector .schedule__selector__pascal[option][selected] {
       background: #0674d8;
+      color: #ffffff;
+      outline: none;
+    }
+    amp-selector .schedule__selector__magellan[option][selected] {
+      background: #00a6c5;
+      color: #ffffff;
+      outline: none;
+    }
+    amp-selector .schedule__selector__multi[option][selected] {
+      background: #06ce83;
       color: #ffffff;
       outline: none;
     }
@@ -227,6 +237,23 @@
       justify-content: center;
       margin-top: 18px;
     }
+    .default {
+      color: #232b31;
+      opacity: 0.8;
+    }
+    .pascal {
+      color: #0674d8;
+      opacity: 1;
+    }
+    .magellan {
+      color: #00a6c5;
+      opacity: 1;
+    }
+    .multi {
+      color: #06ce83;
+      opacity: 1;
+    }
+
   </style>
 </head>
 <body>
@@ -323,7 +350,7 @@
       <div class="schedule__detail">
         <div class="schedule__detail__title">등록</div>
         <div class="schedule__detail__location">
-          <amp-img src="images/location.svg"
+          <amp-img src="images/location_default.svg"
                    width="16" height="16" layout="fixed">
           </amp-img>
           삼성SDS 잠실사옥 지하 1
@@ -339,7 +366,7 @@
       <div class="schedule__detail">
         <div class="schedule__detail__title">Lean Coffee</div>
         <div class="schedule__detail__location">
-          <amp-img src="images/location.svg"
+          <amp-img src="images/location_default.svg"
                    width="16" height="16" layout="fixed">
           </amp-img>
           삼성SDS 잠실사옥 지하 1
@@ -361,11 +388,11 @@
         <div class="schedule__detail__name">
           Ahmed Sidkey / Riot Games
         </div>
-        <div class="schedule__detail__location">
-          <amp-img src="images/location.svg"
+        <div class="schedule__detail__location magellan">
+          <amp-img src="images/location_magellan.svg"
                    width="16" height="16" layout="fixed">
           </amp-img>
-          삼성SDS 잠실사옥 지하 1
+          마젤란홀
         </div>
       </div>
     </div>
@@ -373,7 +400,7 @@
     <!--Session selector-->
     <amp-selector layout="container"
                   on="select:AMP.setState({track: {selected: event.targetOption}})">
-      <div class="schedule__selector"
+      <div class="schedule__selector__pascal"
            option="track1"
            selected>
         <div class="schedule__selector__track">Track1</div>
@@ -381,14 +408,14 @@
         <div class="schedule__selector__level">전문가</div>
       </div>
 
-      <div class="schedule__selector"
+      <div class="schedule__selector__magellan"
            option="track2">
         <div class="schedule__selector__track">Track2</div>
         <div class="schedule__selector__subject">Becoming<br>Agile</div>
         <div class="schedule__selector__level">경험자</div>
       </div>
 
-      <div class="schedule__selector"
+      <div class="schedule__selector__multi"
            option="track3">
         <div class="schedule__selector__track">Track3</div>
         <div class="schedule__selector__subject">Intro to<br>Agile</div>
@@ -415,8 +442,10 @@
             <div class="schedule__detail__name">
               {{name}}
             </div>
-            <div class="schedule__detail__location">
-              <amp-img src="images/location.svg"
+            <div class="schedule__detail__location"
+                 [class]="'schedule__detail__location {{color}}'">
+              <amp-img src="images/location_default.svg"
+                       [src]="'images/location_{{color}}.svg'"
                        width="16" height="16" layout="fixed">
               </amp-img>
               {{location}}
