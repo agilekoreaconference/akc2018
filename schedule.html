@@ -225,8 +225,9 @@
     footer {
       height: 160px;
       display: flex;
-      justify-content: center;
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     .footer__link {
       display: flex;
@@ -234,6 +235,21 @@
     }
     .footer__link__mailto {
       margin-right: 20px;
+    }
+    .footer__site__link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 120px;
+      opacity: 0.5;
+      font-family: "Noto Sans KR";
+      font-size: 13px;
+      letter-spacing: -0.3px;
+      color: #232b31;
+    }
+    .footer__site__link a {
+      text-decoration: none;
+      color: #232b31;
     }
     .footer__copyright {
       display: flex;
@@ -428,9 +444,9 @@
 
     <!--PM Session-->
     <amp-list
-            width="360"
+            width="auto"
             height="770"
-            layout="responsive"
+            layout="fixed-height"
             [src]="trackInfo[track.selected]"
             src="data/schedule_default.json">
       <template type="amp-mustache">
@@ -477,6 +493,11 @@
                  width="24" height="24" layout="fixed">
         </amp-img>
       </a>
+    </div>
+    <div class="footer__site__link">
+      <a href="faq.html">FAQ</a>
+      <pre>  |  </pre>
+      <a href="faq.html">2017 ACK</a>
     </div>
     <div class="footer__copyright">© 2018 Agile Korea Alliance</div>
   </footer>
