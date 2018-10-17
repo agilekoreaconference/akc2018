@@ -666,10 +666,11 @@
   <div class="dday__section">
     <amp-date-countdown class="dday__section__item"
                         timestamp-seconds="1542931200"
+                        locale="ko"
                         layout="fixed-height"
                         height="62">
       <template type="amp-mustache">
-          행사일 D-{{d}}
+        D - {{d}} {{days}}  {{hh}} : {{mm}} : {{ss}}
       </template>
     </amp-date-countdown>
     <div class="dday__section__register">
