@@ -3,8 +3,8 @@
     {
       "start": "11 : 40",
       "end": "12 : 30",
-      "title": "조직 Agility",
-      "name": "구기욱 / 쿠 퍼실리테이션",
+      "title": "애자일 코치의 오해와 진실",
+      "name": "신원 / 11번가 주식회사",
       "location": "파스칼홀",
       "color": "pascal"
     },
@@ -19,15 +19,15 @@
     {
       "start": "13 : 30",
       "end": "14 : 15",
-      "title": "필수장착 애자일 생존배낭",
-      "name": "권갑중 / 서비스 커넥트",
+      "title": "고객 접점을 담당하는 개발팀의 기민함에 관하여",
+      "name": "신정호 / 우아한 형제들",
       "location": "파스칼홀",
       "color": "pascal"
     },
     {
       "start": "14 : 30",
       "end": "15 : 15",
-      "title": "대규모 SI에서 효율적으로 협업하는 방법",
+      "title": "SI 프로젝트에서 Agile 적용이 가능한가?",
       "name": "심상준 / SK C&C",
       "location": "파스칼홀",
       "color": "pascal"
@@ -35,16 +35,16 @@
     {
       "start": "15 : 30",
       "end": "16 : 15",
-      "title": "고객 접점을 담당하는 개발팀의 기민함에 관하여",
-      "name": "심정호 / 우아한 형제들",
+      "title": "애자일 여행을 위한 생존배낭",
+      "name": "권갑중 / 서비스 커넥트",
       "location": "파스칼홀",
       "color": "pascal"
     },
     {
       "start": "16 : 30",
       "end": "17 : 15",
-      "title": "삼성SDS 애자일 10년의 기억",
-      "name": "신황규 / 삼성SDS",
+      "title": "Journey from scrum junior to scrum master",
+      "name": "김유진 / EA",
       "location": "파스칼홀",
       "color": "pascal"
     },
@@ -61,8 +61,8 @@
     {
       "start": "11 : 40",
       "end": "12 : 30",
-      "title": "네 프로젝트가 내 프로젝트가 되는 여정",
-      "name": "백미진 / LG전자",
+      "title": "한국 문화 속 조직 어질리티",
+      "name": "구기욱 / 쿠 퍼실리테이션",
       "location": "마젤란홀",
       "color": "magellan"
     },
@@ -77,32 +77,32 @@
     {
       "start": "13 : 30",
       "end": "14 : 15",
-      "title": "전기차와 애자일",
-      "name": "박상주 / LG전자",
+      "title": "네 프로젝트가 내 프로젝트가 되는 여정",
+      "name": "백미진 / LG전자",
       "location": "마젤란홀",
       "color": "magellan"
     },
     {
       "start": "14 : 30",
       "end": "15 : 15",
-      "title": "애자일 코치 A부터 C까지",
-      "name": "신원 / 11번가 주식회사",
+      "title": "삼성SDS는 애자일 개발을 하는 회사입니다",
+      "name": "신황규 / 삼성SDS",
       "location": "마젤란홀",
       "color": "magellan"
     },
     {
       "start": "15 : 30",
       "end": "16 : 15",
-      "title": "Doing Agile을 넘어  Being Agile로의 Agile Transformation",
-      "name": "이현찬 / 삼성SDS",
+      "title": "전기차와 애자일",
+      "name": "박상주 / LG전자",
       "location": "마젤란홀",
       "color": "magellan"
     },
     {
       "start": "16 : 30",
       "end": "17 : 15",
-      "title": "Journey from scrum junior to scrum master",
-      "name": "김유진 / EA",
+      "title": "Doing Agile을 넘어  Being Agile로의 Agile Transformation",
+      "name": "이현찬 / 삼성SDS",
       "location": "마젤란홀",
       "color": "magellan"
     },
