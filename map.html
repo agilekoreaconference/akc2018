@@ -1,6 +1,11 @@
 <!doctype html>
 <html>
 <head>
+  <style>
+    .wrap_controllers {
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <!-- * Daum 지도 - 지도퍼가기 -->
@@ -15,10 +20,12 @@
 
   <!-- 3. 실행 스크립트 -->
   <script charset="UTF-8">
-    new daum.roughmap.Lander({
+    var map = new daum.roughmap.Lander({
       "timestamp" : "1539655263819",
       "key" : "qewm"
-    }).render();
+    });
+    console.log(map);
+    map.render();
   </script>
 </body>
 </html>
