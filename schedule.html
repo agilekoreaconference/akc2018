@@ -185,10 +185,13 @@
       margin-left: 2px;
       margin-right: 2px;
     }
+    .schedule__selector__track {
+      text-align: left;
+    }
     .schedule__selector__subject {
       font-size: 16px;
       font-weight: bold;
-      line-height: 1.25;
+      line-height: 1.5;
       margin-top: 2px;
       text-align: left;
     }
@@ -265,8 +268,8 @@
       flex-grow: 1;
     }
     .speaker__ligthbox__middle {
-      padding: 20px 6px 17px 6px;
-      border-bottom: 1px solid #dee2e6;
+      width: inherit;
+      margin: 20px 6px;
     }
     .speaker__ligthbox__middle__title {
       font-size: 20px;
@@ -297,6 +300,8 @@
       margin-right: 20px;
     }
     .speaker__ligthbox__note {
+      border-top: 1px solid #dee2e6;
+      padding-top: 20px;
       margin-top: 20px;
       opacity: 0.8;
       font-size: 16px;
@@ -547,19 +552,19 @@
            option="track1"
            selected>
         <div class="schedule__selector__track">Track1</div>
-        <div class="schedule__selector__subject">Becoming<br><br>Agile</div>
+        <div class="schedule__selector__subject">Becoming Agile</div>
       </div>
 
       <div class="schedule__selector__magellan"
            option="track2">
         <div class="schedule__selector__track">Track2</div>
-        <div class="schedule__selector__subject">Beyond<br><br>Agile</div>
+        <div class="schedule__selector__subject">Beyond Agile</div>
       </div>
 
       <div class="schedule__selector__multi"
            option="track3">
         <div class="schedule__selector__track">Track3</div>
-        <div class="schedule__selector__subject">Dancing<br>with<br>Agile</div>
+        <div class="schedule__selector__subject">Dancing with Agile</div>
       </div>
     </amp-selector>
 
