@@ -132,6 +132,7 @@
     }
     .schedule__detail {
       padding-left: 20px;
+      position: relative;
     }
     .schedule__detail__keynote {
       font-size: 14px;
@@ -160,8 +161,10 @@
       margin-top: 10px;
     }
     .schedule__detail__more {
-      text-decoration: underline;
-      color: #0674d8;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
     }
     amp-selector {
       justify-content: center;
@@ -171,8 +174,9 @@
     }
     .schedule__selector__pascal, .schedule__selector__magellan, .schedule__selector__multi {
       display: inline-block;
-      width: 70px;
+      width: 30%;
       height: 93px;
+      max-width: 220px;
       font-size: 14px;
       color: black;
       letter-spacing: -0.3px;
@@ -186,6 +190,7 @@
       font-weight: bold;
       line-height: 1.25;
       margin-top: 2px;
+      text-align: left;
     }
     amp-selector:not([disabled]) {
       display: flex;
@@ -531,9 +536,7 @@
                         note: 'Agile is not a process, nor a methodology it is a Mindset. Similarly, an Agile transformation is not about changing processes, systems or tools, it is about transforming the culture. But how do you transform culture and mindset? This is the key question that Dr. Ahmed Sidky will explore in this talk.',
                         color: 'magellan'
                       }
-                    }),my-lightbox">
-          read more
-        </div>
+                    }),my-lightbox"></div>
       </div>
     </div>
 
@@ -577,7 +580,7 @@
           <div class="schedule__detail">
             <div class="schedule__detail__title">{{title}}</div>
             <div class="schedule__detail__name">
-              {{name}} / {{company}}
+              {{#name}} {{name}} / {{company}} {{/name}}
             </div>
             <div class="schedule__detail__location"
                  [class]="'schedule__detail__location {{color}}'">
@@ -605,9 +608,7 @@
                         note:'{{note}}',
                         color: '{{color}}'
                       }
-                    }),my-lightbox">
-                read more
-              </div>
+                    }),my-lightbox"></div>
             {{/note}}
           </div>
         </div>
