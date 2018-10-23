@@ -15,6 +15,7 @@
   <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
   <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
   <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
 
   <style amp-custom>
     body {
@@ -158,6 +159,10 @@
       color: #232b31;
       margin-top: 10px;
     }
+    .schedule__detail__more {
+      text-decoration: underline;
+      color: #0674d8;
+    }
     amp-selector {
       justify-content: center;
       text-align: center;
@@ -216,6 +221,88 @@
       text-decoration: none;
       text-align: center;
     }
+
+    #my-lightbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    .speaker__ligthbox {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      width: calc(100vw - 52px);
+      height: calc(100vh - 150px);
+      margin: 10px 10px;
+      padding: 18px 14px 30px 18px;
+      background: #ffffff;
+    }
+    @media (min-width: 1024px) {
+      .speaker__ligthbox {
+        width: 500px;
+        height: 620px;
+      }
+    }
+    .speaker__ligthbox__header {
+      display: grid;
+      grid-template-columns: 80px 1fr 40px;
+      width: inherit;
+      height: 80px;
+    }
+    .speaker__ligthbox__profile {
+      flex-grow: 10;
+      border-radius: 38px;
+
+    }
+    .speaker__ligthbox__close {
+      flex-grow: 1;
+    }
+    .speaker__ligthbox__middle {
+      padding: 20px 6px 17px 6px;
+      border-bottom: 1px solid #dee2e6;
+    }
+    .speaker__ligthbox__middle__title {
+      font-size: 20px;
+      line-height: 1.5;
+      letter-spacing: -0.3px;
+      color: #232b31;
+      margin-top: 4px;
+    }
+    .speaker__ligthbox__middle__name {
+      font-size: 16px;
+      color: #232b31;
+      opacity: 0.5;
+      margin-top: 6px;
+    }
+    .speaker__ligthbox__middle__time {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 16px;
+      color: #232b31;
+      opacity: 0.8;
+      margin-top: 14px;
+    }
+    .speaker__ligthbox__middle__time > amp-img {
+      margin-right: 4px;
+    }
+    .speaker__ligthbox__middle__time > div {
+      margin-right: 20px;
+    }
+    .speaker__ligthbox__note {
+      margin-top: 20px;
+      opacity: 0.8;
+      font-size: 16px;
+      color: #232b31;
+      height: auto;
+      overflow: scroll;
+      max-height: 282px;
+      white-space: pre-wrap;
+      font-family: "Noto Sans KR"
+    }
+
     footer {
       height: 160px;
       display: flex;
@@ -273,6 +360,22 @@
     <script type="application/json">
       {
         "selected": "track1"
+      }
+    </script>
+  </amp-state>
+  <amp-state id="selectedSpeaker">
+    <script type="application/json">
+      {
+        "name": "nobody",
+        "company": "company",
+        "img": "images/empty_profile_L.png",
+        "sImg": "images/empty_profile.png",
+        "track": "track",
+        "time": "00:00~00:00",
+        "location": "location",
+        "color": "default",
+        "title": "title",
+        "note": "more"
       }
     </script>
   </amp-state>
@@ -412,6 +515,25 @@
           </amp-img>
           마젤란홀
         </div>
+        <div class="schedule__detail__more"
+             tabindex="0"
+             role="button"
+             on="tap:AMP.setState({
+                      selectedSpeaker:{
+                        name:'Ahmed Sidky',
+                        company:'Riot Games',
+                        img:'/images/speaker/ahmed.jpg',
+                        sImg:'/images/speaker/ahmed_s.jpg',
+                        track:'Key Note',
+                        time:'10:30 - 11:30',
+                        location: '마젤란홀',
+                        title:'Mindset & Culture: At the Heart of a Winning Agile Transformation',
+                        note: 'Agile is not a process, nor a methodology it is a Mindset. Similarly, an Agile transformation is not about changing processes, systems or tools, it is about transforming the culture. But how do you transform culture and mindset? This is the key question that Dr. Ahmed Sidky will explore in this talk.',
+                        color: 'magellan'
+                      }
+                    }),my-lightbox">
+          read more
+        </div>
       </div>
     </div>
 
@@ -441,7 +563,7 @@
     <!--PM Session-->
     <amp-list
             width="auto"
-            height="770"
+            height="800"
             layout="fixed-height"
             [src]="trackInfo[track.selected]"
             src="data/schedule_default.json">
@@ -455,7 +577,7 @@
           <div class="schedule__detail">
             <div class="schedule__detail__title">{{title}}</div>
             <div class="schedule__detail__name">
-              {{name}}
+              {{name}} / {{company}}
             </div>
             <div class="schedule__detail__location"
                  [class]="'schedule__detail__location {{color}}'">
@@ -465,11 +587,82 @@
               </amp-img>
               {{location}}
             </div>
+            <!--mustache conditional support only single line-->
+            {{#note}}
+              <div class="schedule__detail__more"
+                   tabindex="0"
+                   role="button"
+                   on="tap:AMP.setState({
+                      selectedSpeaker:{
+                        name:'{{name}}',
+                        company:'{{company}}',
+                        img:'{{img}}',
+                        sImg:'{{sImg}}',
+                        track:'{{track}}',
+                        time:'{{time}}',
+                        location: '{{location}}',
+                        title:'{{title}}',
+                        note:'{{note}}',
+                        color: '{{color}}'
+                      }
+                    }),my-lightbox">
+                read more
+              </div>
+            {{/note}}
           </div>
         </div>
       </template>
     </amp-list>
   </div>
+
+  <!--speaker detail popup-->
+  <amp-lightbox id="my-lightbox"
+                layout="nodisplay"
+                scrollable>
+    <div class="speaker__ligthbox">
+      <div class="speaker__ligthbox__header">
+        <amp-img class="speaker__ligthbox__profile"
+                 width="80"
+                 height="80"
+                 layout="fixed"
+                 [alt]="name"
+                 src="images/empty_profile.png"
+                 [src]="selectedSpeaker.sImg"></amp-img>
+        <div></div>
+        <amp-img class="speaker__ligthbox__close"
+                 width="30"
+                 height="30"
+                 layout="fixed"
+                 on="tap:my-lightbox.close"
+                 role="button"
+                 src="images/ic-home-close.svg"
+                 tabindex="0">
+        </amp-img>
+      </div>
+      <div class="speaker__ligthbox__middle">
+        <div class="subtitle"
+           [class]="'subtitle ' + selectedSpeaker.color"
+           [text]="selectedSpeaker.track">
+          track
+        </div>
+        <div class="speaker__ligthbox__middle__title"
+             [text]="selectedSpeaker.title">title</div>
+        <div class="speaker__ligthbox__middle__name"
+             [text]="selectedSpeaker.name + ' / ' + selectedSpeaker.company">nobody</div>
+        <div class="speaker__ligthbox__middle__time">
+          <amp-img width="16" height="16" layout="fixed"
+                   src="images/time.svg"></amp-img>
+          <div [text]="selectedSpeaker.time">00:00~00:00</div>
+          <amp-img width="16" height="16" layout="fixed"
+                   src="images/location_default.svg"></amp-img>
+          <div [text]="selectedSpeaker.location">location</div>
+        </div>
+      </div>
+      <pre class="speaker__ligthbox__note"
+           [text]="selectedSpeaker.note">note
+      </pre>
+    </div>
+  </amp-lightbox>
 
   <div class="link__section">
     <a href="https://booking.naver.com/booking/5/bizes/185789/items/2885535">등록하기</a>

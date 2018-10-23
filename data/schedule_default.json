@@ -4,9 +4,15 @@
       "start": "11 : 40",
       "end": "12 : 30",
       "title": "애자일 코치의 오해와 진실",
-      "name": "신원 / 11번가 주식회사",
-      "location": "파스칼홀",
-      "color": "pascal"
+      "name": "신원",
+      "company": "11번가 주식회사",
+      "img": "images/speaker/shin_w.jpg",
+      "sImg": "images/speaker/shin_w_s.jpg",
+      "track": "Track 1 : Becoming Agile",
+      "time": "11:40 - 12:30",
+      "location" : "파스칼홀",
+      "color": "pascal",
+      "note": "애자일 적용 과정에서 가장 중요한 역할인 애자일 코치. 그런 반면 애자일 코치와 관련된 다양한 오해들 또한 존재합니다.\n\"애자일 코치는 스크럼 마스터와 동일한 역할이다.\"\n\"애자일 코치는 몽상가이다.\"\n애자일 코치에 대한 오해와 진실을 알아보고, 애자일 코치기 위해 어떤 과정이 필요한 지에 대해서 다룹니다."
     },
     {
       "start": "12 : 30",
@@ -20,33 +26,57 @@
       "start": "13 : 30",
       "end": "14 : 15",
       "title": "고객 접점을 담당하는 개발팀의 기민함에 관하여",
-      "name": "신정호 / 우아한 형제들",
-      "location": "파스칼홀",
-      "color": "pascal"
+      "name": "신정호",
+      "company": "우아한 형제들",
+      "img": "images/speaker/shin_jh.jpg",
+      "sImg": "images/speaker/shin_jh_s.jpg",
+      "track": "Track 1 : Becoming Agile",
+      "time": "13:30-14:15",
+      "location" : "파스칼홀",
+      "color": "pascal",
+      "note": "대규모 고객 접점을 담당하는 개발팀은 빠르게 변화하는 환경 속에서도 신속하고 효과적으로 우선순위를 판단하고, 해결 방안을 모색해야 합니다.\n이와 동시에 팀이 한 가지 상황에 매몰되어 탈진하지 않도록 최적의 \"팀 리듬\"을 파악하고 조절하는 것 또한 중요합니다.\n\"배달의 민족\" 개발팀이 겪는 어려움들과 이를 해결해 나가기 위해 필요한 \"기민함(Agility)\"에 대해서 다룹니다."
     },
     {
       "start": "14 : 30",
       "end": "15 : 15",
       "title": "SI 프로젝트에서 Agile 적용이 가능한가?",
-      "name": "심상준 / SK C&C",
-      "location": "파스칼홀",
-      "color": "pascal"
+      "name": "심상준",
+      "company": "SK C&C",
+      "img": "images/speaker/shim_sj.jpg",
+      "sImg": "images/speaker/shim_sj_s.jpg",
+      "track": "Track 1 : Becoming Agile",
+      "time": "14:30 - 15:15",
+      "location" : "파스칼홀",
+      "color": "pascal",
+      "note": "SI 프로젝트에서의 Agile 적용은 실패한다는 의견이 많았지만, 4차 산업혁명이 본격화되면서 SI 프로젝트에서도 경쟁력을 높이기 위한 방법으로 Agile에 대한 관심도가 높아지고 있습니다.\nSI 프로젝트 환경에서 Agile을 효율적으로 적용하고자 한 다양한 시도들과 그 한계점, 향후 발전 방안에 대해 다룹니다."
     },
     {
       "start": "15 : 30",
       "end": "16 : 15",
       "title": "애자일 여행을 위한 생존배낭",
-      "name": "권갑중 / 서비스 커넥트",
-      "location": "파스칼홀",
-      "color": "pascal"
+      "name": "권갑중",
+      "company": "서비스 커넥트",
+      "img": "images/speaker/kwon_gj.jpg",
+      "sImg": "images/speaker/kwon_gj_s.jpg",
+      "track": "Track 1 : Becoming Agile",
+      "time": "15:30 - 16:15",
+      "location" : "파스칼홀",
+      "color": "pascal",
+      "note": "학습, 성장, 회고, 코칭, 멘토링 등 갖춰야 할 것이 많은 애자일 여행.\n애자일 여행에서 꼭 챙겨야 할 필수품을 슬램덩크, 매트릭스, 매드맥스와 같은 영화 속에서 함께 찾아봅니다."
     },
     {
       "start": "16 : 30",
       "end": "17 : 15",
       "title": "Journey from scrum junior to scrum master",
-      "name": "김유진 / EA",
-      "location": "파스칼홀",
-      "color": "pascal"
+      "name": "김유진",
+      "company": "Electronic Arts (EA)",
+      "img": "images/speaker/kim_yj.jpg",
+      "sImg": "images/speaker/kim_yj_s.jpg",
+      "track": "Track 1 : Becoming Agile",
+      "time": "16:30 - 17:15",
+      "location" : "파스칼홀",
+      "color": "pascal",
+      "note": "애자일 초심자가 스크럼 마스터로 성장하기 위해서는 역할에 대한 정확한 이해와 \"성장 마인드셋\"이 필수적입니다.\n또한 본인과 조직의 성장을 추구하는 과정에서 필연적으로 찾아오는 실패를 어떻게 이용하느냐 또한 매우 중요합니다.\n진정한 스크럼 마스터로의 길을 묵묵히 걸어가고 있는 애자일 초심자들을 위한 애자일 여행 가이드를 공유합니다."
     },
     {
       "start": "17 : 30",
