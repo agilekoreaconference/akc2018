@@ -10,6 +10,7 @@
   <script async src="https://cdn.ampproject.org/v0.js"></script>
 
   <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 
   <style amp-custom>
     ::-webkit-scrollbar {
@@ -202,6 +203,21 @@
   </style>
 </head>
 <body>
+  <amp-analytics type="googleanalytics">
+    <script type="application/json">
+      {
+        "vars": {
+          "account": "UA-90999360-2"
+        },
+        "triggers": {
+          "trackPageview": {
+            "on": "visible",
+            "request": "pageview"
+          }
+        }
+      }
+    </script>
+  </amp-analytics>
   <!-- navigator -->
   <div class="header">
     <header>
