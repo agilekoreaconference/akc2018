@@ -310,7 +310,7 @@
       flex-direction: column;
       align-items: center;
       padding: 0px 9px;
-      margin-bottom: 10px;
+      margin-bottom: 40px;
       max-height: 832px;
     }
     .session__background {
@@ -322,8 +322,7 @@
     .session__list__card {
       position: relative;
       width: 320px;
-      height: 327px;
-      margin-bottom: 30px;
+      height: 352px;
       margin-left: 10px;
       margin-right: 10px;
     }
@@ -332,12 +331,12 @@
       bottom: 0;
       z-index: 1;
       width: calc(100% - 42px);
-      height: calc(167px - 36px);
+      height: calc(190px - 48px);
       background: white;
       box-shadow: 0 2px 12px 0 rgba(68, 79, 87, 0.1);
       border: solid 1px #dee2e6;
       text-align: left;
-      padding: 18px 20px;
+      padding: 18px 20px 30px 20px;
     }
     .subtitle {
       font-size: 14px;
@@ -742,7 +741,7 @@
     </amp-img>
     <div class="section__title">Session</div>
     <amp-list width="360"
-              height="357"
+              height="382"
               layout="responsive"
               src="data/speakers.json">
       <template type="amp-mustache">
@@ -769,9 +768,9 @@
                    alt="{{name}}"
                    src="{{img}}"></amp-img>
           <div class="session__list__card__note">
-            <p class="subtitle"
+            <div class="subtitle"
                [class]="'subtitle {{color}}'"
-            >{{track}}</p>
+            >{{track}}</div>
             <div class="session__list__card__note__subject">{{title}}</div>
             <amp-fit-text class="session__list__card__note__speaker"
                           width="240"
@@ -940,14 +939,16 @@
                media="(max-width: 1023px)"
       ></amp-img>
     </a>
-    <amp-iframe class="location__section__map__wide"
-                width="auto"
-                height="341"
-                layout="fixed-height"
-                frameborder="0"
-                sandbox="allow-scripts"
-                src="map.html">
-    </amp-iframe>
+    <div class="location__section__map__wide">
+      <amp-iframe
+                  width="auto"
+                  height="341"
+                  layout="fixed-height"
+                  frameborder="0"
+                  sandbox="allow-scripts"
+                  src="map.html">
+      </amp-iframe>
+    </div>
   </div>
 
   <div class="faq__section">
