@@ -93,7 +93,7 @@
       height: 180px;
       margin-top: -63px;
     }
-    .faq__title__background {
+    .about__title__background {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -104,7 +104,7 @@
       height: 175px;
     }
 
-    .faq__title__text {
+    .about__title__text {
       position: absolute;
     }
     section {
@@ -122,41 +122,20 @@
       font-weight: 900;
       color: #232b31;
       margin-top: 6px;
+      margin-bottom: 30px;
     }
-    .qna {
+    .article {
       display: flex;
       flex-direction: column;
-      border-bottom: 1px solid #dee2e6;
-      width: calc(100vw - 20px);
-    }
-    .question {
-      display: flex;
-      margin-top: 20px;
-      margin-left: 6px;
-      font-size: 14px;
-      font-weight: bold;
-      letter-spacing: -0.3px;
-      color: #171b20;
-    }
-    .question > .qmark {
-      margin-left: 9px;
-      margin-right: 6px;
-    }
-    .answer {
-      margin: 9px 10px 34px 19px;
-      font-size: 16px;
-      line-height: 1.56;
-      letter-spacing: -0.3px;
-      color: #171b20;
-    }
-    .answer > a {
-      text-decoration: none;
-      color: #008cfd;
+      width: calc(100vw - 40px);
+      margin-bottom: 30px;
+      word-break: keep-all;
     }
     .link__section {
       display: flex;
       justify-content: center;
-      margin-top: 40px;
+      margin-top: 50px;
+      margin-bottom: 90px;
     }
     .link__section > a {
       width: 240px;
@@ -244,7 +223,7 @@
     </header>
 
     <div class="slogan__section">
-      <div class="faq__title__background">
+      <div class="about__title__background">
         <amp-img src="images/schedule-left-bg.png"
                  width="180"
                  height="175"
@@ -256,8 +235,8 @@
                  layout="fixed">
         </amp-img>
       </div>
-      <amp-img class="faq__title__text"
-               src="images/faq_title.svg"
+      <amp-img class="about__title__text"
+               src="images/about_title.svg"
                width="220"
                height="60"
                layout="fixed">
@@ -303,43 +282,12 @@
              layout="fixed"
              src="images/bullet-title.svg">
     </amp-img>
-    <div class="section__title">참가등록</div>
-    <div class="qna">
-      <div class="question">
-        <div class="qmark">Q.</div>
-        참가비는 얼마이며, 어떻게 납부해야 하나요?
-      </div>
-      <div class="answer">
-        참가비는 ₩55,000이며,
-        <a href="https://booking.naver.com/booking/5/bizes/185789/items/2885535" target="_blank">네이버 예약 페이지</a>
-        에서 결제하실 수 있습니다. <br>
-        무통장 입금을 원하시는 경우에는 
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdKBbuqMaFInz2immid9uMV0oQde9R9oWi64YET5Vlu0BoSUQ/viewform" target="_blank">해당 링크</a>
-        를 통해서 신청 후 납부 부탁드립니다.
-      </div>
-    </div>
-    <div class="qna">
-      <div class="question">
-        <div class="qmark">Q.</div>
-        참가 등록은 언제, 어떻게 신청 할 수 있나요?
-      </div>
-      <div class="answer">
-        10월 8일 (월) 13시 부터 온라인
-        (<a href="https://booking.naver.com/booking/5/bizes/185789/items/2885535" target="_blank">네이버 예약 페이지</a>,
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdKBbuqMaFInz2immid9uMV0oQde9R9oWi64YET5Vlu0BoSUQ/viewform" target="_blank">무통장 입금 신청</a>)
-        으로 신청이 가능합니다.<br>
-        선착순으로 마감될 예정입니다.
-      </div>
-    </div>
-    <div class="qna">
-      <div class="question">
-        <div class="qmark">Q.</div>
-        현장 등록이 가능한가요?
-      </div>
-      <div class="answer">
-        본 행사는 온라인으로 신청하신 분들만 등록이 가능합니다.<br>
-        미리 온라인으로 신청 부탁드립니다.
-      </div>
+    <div class="section__title">AKC란?</div>
+    <div class="article">
+      Agile Korea Conference(이하 AKC)는 애자일 생태계 전체를 대상으로 개최되는 가장 중요한 컨퍼런스 중 하나입니다.<br>
+      전세계적으로 애자일에 대한 업계의 관심이 늘어나는 가운데, 삼성, LG, SK를 비롯한 많은 한국의 대기업과 중소기업 및 스타트업들 또한 애자일 방식을 적용하고 있습니다.<br>
+      애자일을 활용하는 개발자, 디자이너, 관리자 및 경영진, 코치들과 컨설턴트들과 함께, 작년과 마찬가지로 서울 잠실에 모여 그들의 전문성과 열정을 공유하려고 합니다.<br>
+      지난 AKC 2017은 총 76개 업체로부터 450명의 발표자 및 참여자가 행사를 꾸며주셨고, 성황리에 AKC가 한국을 대표하는 애자일 컨퍼런스라는 것을 증명했습니다.
     </div>
   </section>
 
@@ -350,82 +298,18 @@
              layout="fixed"
              src="images/bullet-title.svg">
     </amp-img>
-    <div class="section__title">행사정보</div>
-    <div class="qna">
-      <div class="question">
-        <div class="qmark">Q.</div>
-        각 세션 별 발표자료와 영상을 다시 볼 수 있나요?
-      </div>
-      <div class="answer">
-        행사 종료 후 참석자 이메일로 발표자료와 동영상을 공유해 드릴 예정입니다.
-        (일부 연사 제외)
-      </div>
-    </div>
-    <div class="qna">
-      <div class="question">
-        <div class="qmark">Q.</div>
-        해외 연사 발표 세션의 경우, 동시통역을 제공하나요?
-      </div>
-      <div class="answer">
-        해외 연사 발표 세션의 경우 실시간 동시통역을 지원합니다.
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <amp-img class="section__bullet"
-             width="12"
-             height="12"
-             layout="fixed"
-             src="images/bullet-title.svg">
-    </amp-img>
-    <div class="section__title">기타</div>
-    <div class="qna">
-      <div class="question">
-        <div class="qmark">Q.</div>
-        주차가 가능한가요?
-      </div>
-      <div class="answer">
-        주차권을 지원하지 않습니다.
-        <a href="https://m.map.naver.com/directions/?ename=삼성에스디에스&ex=127.1004294&ey=37.5163217" target="_blank">대중교통 이용</a>을
-        부탁드립니다.
-      </div>
-    </div>
-
-    <div class="qna">
-      <div class="question">
-        <div class="qmark">Q.</div>
-        점심식사가 제공되나요?
-      </div>
-      <div class="answer">
-        네, 점심 식사 제공 예정입니다.
-      </div>
-    </div>
-
-    <div class="qna">
-      <div class="question">
-        <div class="qmark">Q.</div>
-        Wi-Fi와 충전기를 사용할 수 있나요?
-      </div>
-      <div class="answer">
-        행사장에는 공유 Wi-Fi 및 별도 충전 설비를 제공하지 않습니다.
-      </div>
-    </div>
-
-    <div class="qna">
-      <div class="question">
-        <div class="qmark">Q.</div>
-        세금계산서 발행이 가능한가요?
-      </div>
-      <div class="answer">
-        네이버 예약으로 결제 하시는 경우에는 결제 시에 연락처 혹은 사업자번호를 입력하여 발행하실 수 있습니다.<br> 
-        무통장 입금으로 진행하시는 경우에는 입금하여 등록 완료된 이후에 agilekoreaconference@gmail.com 으로 입금자명, 참가자수, 총 금액, 사업자등록증 사본을 주시면 발급해드립니다.
-      </div>
+    <div class="section__title">AKC 2018</div>
+    <div class="article">
+      올해 Agile Korea Conference 2018은<br>
+      <b>‘Journey to being agile’</b> 슬로건을 걸고 삼성SDS 서관에서 개최됩니다.<br>
+      키노트 연사인 Ahmed Sidky를 비롯하여 국내외 다양한 경험을 가진 연사분들이 참석자 분들을 기다리고 있습니다.<br>
+      또한 여러분에게 도움이 될 수 있는 훌륭한 컨텐츠와 네트워킹을 위한 장소를 제공하고자 합니다.<br>
+      AKC 2018 많은 참여 부탁드립니다.
     </div>
   </section>
 
   <div class="link__section">
-    <a href="https://booking.naver.com/booking/5/bizes/185789/items/2885535" target="_blank">등록하기</a>
+    <a href="last-akc.html">작년행사 보기</a>
   </div>
 
   <footer>
