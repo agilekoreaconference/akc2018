@@ -616,6 +616,7 @@
             align-items: center;
             background: white;
             border-top: 1px solid #dee2e6;
+            margin-bottom: 40px;
         }
 
         .sponsor__title {
@@ -627,8 +628,20 @@
         }
 
         .sponsor__logos {
-
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
+
+        @media (max-width: 360px) {
+            .sponsor__logos {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width:200px;
+            }
+        }
+
 
         .faq__section {
             display: flex;
@@ -1030,7 +1043,7 @@
         <amp-img width="140"
                  height="60"
                  layout="fixed"
-                 src="images/sponsor/spon-sds.png">
+                 src="images/sponsor/spon-sds.svg">
         </amp-img>
     </div>
 
@@ -1050,6 +1063,11 @@
                  height="60"
                  layout="fixed"
                  src="images/sponsor/spon-aa.png">
+        </amp-img>
+        <amp-img width="90"
+                 height="60"
+                 layout="fixed"
+                 src="images/sponsor/spon-riot.png">
         </amp-img>
     </div>
 
