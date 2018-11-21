@@ -108,7 +108,8 @@
       "title": "점심 식사",
       "name": "",
       "location": "델라코트 (B1F, B2F)",
-      "color": "default"
+      "color": "default",
+      "menu": "menu"
     },
     {
       "start": "13 : 30",
