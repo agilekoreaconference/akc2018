@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="322" height="60" viewBox="0 0 322 60">
+    <g fill="none" fill-rule="evenodd">
+        <path d="M0 0h220v60H0z"/>
+        <text fill="#171B20" font-family="AvenirNext-Bold, Avenir Next" font-size="48" font-weight="bold" letter-spacing="-2.011">
+            <tspan x="18" y="57">Hall of Honor</tspan>
+        </text>
+    </g>
+</svg>
